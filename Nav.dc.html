@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+</helmet>
+<header style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; padding:18px clamp(20px,5vw,64px); background:rgba(243,237,226,0.86); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid rgba(27,23,20,0.12); font-family:Archivo,sans-serif;">
+  <a href="Home.dc.html" style="display:flex; flex-direction:column; gap:1px; text-decoration:none; line-height:1;">
+    <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#1B1714; letter-spacing:0.2px;">Samuel Eludiora</span>
+    <span style="display:flex; align-items:center; gap:6px; font-size:9.5px; font-weight:700; letter-spacing:2.4px; color:#BD541F; text-transform:uppercase;"><span style="width:5px; height:5px; border-radius:50%; background:#BD541F;"></span>Thought Leadership</span>
+  </a>
+  <nav style="display:flex; align-items:center; gap:clamp(14px,2vw,26px); flex-wrap:wrap; justify-content:flex-end;">
+    <sc-for list="{{ links }}" as="lnk" hint-placeholder-count="7">
+      <a href="{{ lnk.href }}" style="position:relative; text-decoration:none; font-size:14px; font-weight:600; padding:4px 0; color:{{ lnk.color }}; transition:color .18s ease;" style-hover="color:#BD541F">{{ lnk.label }}<span style="{{ lnk.bar }}"></span></a>
+    </sc-for>
+    <a href="Contact.dc.html" style="text-decoration:none; font-size:13.5px; font-weight:700; color:#F3EDE2; background:#1B1714; padding:10px 18px; border-radius:4px; transition:background .2s ease;" style-hover="background:#BD541F">Let’s talk</a>
+  </nav>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:80},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;about&quot;,&quot;services&quot;,&quot;portfolio&quot;,&quot;cases&quot;,&quot;pricing&quot;,&quot;contact&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals(){
+    const a = this.props.active || '';
+    const defs = [
+      ['Home','Home.dc.html','home'],
+      ['About','About.dc.html','about'],
+      ['Services','Services.dc.html','services'],
+      ['Portfolio','Portfolio.dc.html','portfolio'],
+      ['Case Studies','CaseStudies.dc.html','cases'],
+      ['Pricing','Pricing.dc.html','pricing'],
+      ['Contact','Contact.dc.html','contact']
+    ];
+    const links = defs.map(function(d){
+      const on = d[2] === a;
+      return {
+        label: d[0], href: d[1],
+        color: on ? '#BD541F' : '#1B1714',
+        bar: on
+          ? 'position:absolute; left:0; right:0; bottom:-3px; height:2px; background:#BD541F; border-radius:2px;'
+          : 'display:none;'
+      };
+    });
+    return { links: links };
+  }
+}
+</script>
+</body>
+</html>

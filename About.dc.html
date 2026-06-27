@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;} html,body{margin:0;padding:0;}
+  @keyframes seFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
+  @keyframes seFloat2{0%,100%{transform:translateY(0)}50%{transform:translateY(11px)}}
+  @keyframes sePulse{0%,100%{opacity:.45;transform:scale(1)}50%{opacity:1;transform:scale(1.45)}}
+  @media (prefers-reduced-motion:reduce){*{animation:none !important;}}
+  #seAbout.js-ready [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+  #seAbout.js-ready [data-reveal].seIn{opacity:1;transform:none;}
+</style>
+</helmet>
+<div id="seAbout" style="background:#F3EDE2; color:#1B1714; font-family:Archivo,sans-serif; overflow-x:hidden;">
+  <dc-import name="Nav" active="about" hint-size="100%,80px"></dc-import>
+
+  <!-- HERO -->
+  <section style="position:relative; background:#16120F; color:#F3EDE2; overflow:hidden;">
+    <div style="position:absolute; inset:0; background:radial-gradient(110% 90% at 85% 0%, rgba(189,84,31,0.26), transparent 55%), radial-gradient(80% 80% at 0% 100%, rgba(232,178,122,0.12), transparent 55%); pointer-events:none;"></div>
+    <div style="position:absolute; z-index:1; top:13%; left:43%; width:62px; height:62px; border:1.5px solid rgba(232,178,122,0.28); border-radius:50%; animation:seFloat 7.5s ease-in-out infinite; pointer-events:none;"></div>
+    <div style="position:absolute; z-index:1; bottom:18%; left:30%; width:11px; height:11px; background:rgba(232,178,122,0.7); border-radius:50%; animation:seFloat2 5.5s ease-in-out infinite; pointer-events:none;"></div>
+    <div style="position:absolute; z-index:1; top:30%; left:8%; width:8px; height:8px; background:rgba(232,178,122,0.5); border-radius:50%; animation:sePulse 3.1s ease-in-out infinite; pointer-events:none;"></div>
+    <div style="position:relative; z-index:2; max-width:1180px; margin:0 auto; padding:clamp(44px,6vw,88px) clamp(20px,5vw,64px); display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:clamp(36px,5vw,72px); align-items:center;">
+      <div data-reveal style="min-width:0;">
+        <p style="margin:0 0 22px; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#E8B27A;">Who is Samuel Eludiora?</p>
+        <h1 style="margin:0 0 24px; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(38px,5.6vw,68px); line-height:1.03; letter-spacing:-0.8px;">A doctor who writes — and a strategist who gets you <em style="font-style:italic; color:#E8B27A;">found</em>.</h1>
+        <p style="margin:0; max-width:540px; font-size:clamp(16px,1.5vw,18px); line-height:1.7; color:rgba(243,237,226,0.78);">I’m Samuel Eludiora — a medical doctor with deep training in SEO, AI automation and web. I turn expert knowledge into content the world can actually discover, then build the systems that publish it relentlessly. This is how I make my clients the authorities in their fields.</p>
+      </div>
+      <div data-reveal style="position:relative; justify-self:center; min-width:0;">
+        <div style="position:absolute; inset:16px -16px -16px 16px; background:linear-gradient(160deg,#D98A4E,#BD541F); border-radius:10px;"></div>
+        <div id="seHeadshot" role="img" aria-label="Samuel Eludiora" style="position:relative; z-index:2; width:min(360px,78vw); aspect-ratio:1/1; border-radius:10px; overflow:hidden; background-color:#E6DCC8; background-size:cover; background-position:center; background-repeat:no-repeat; box-shadow:0 28px 64px rgba(0,0,0,0.45);"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section style="background:#FBF7EE; border-bottom:1px solid rgba(27,23,20,0.1);">
+    <div style="max-width:780px; margin:0 auto; padding:clamp(64px,9vw,120px) clamp(20px,5vw,64px);">
+      <p data-reveal style="margin:0 0 26px; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#BD541F;">The story</p>
+      <p data-reveal style="margin:0 0 26px; font-size:clamp(18px,2.1vw,23px); line-height:1.62; color:#2B251F; font-family:'Instrument Serif',serif;">I studied Medicine &amp; Surgery for eight years at the College of Health Sciences, Obafemi Awolowo University — finishing in 2026 — and I qualified as a doctor.</p>
+      <p data-reveal style="margin:0 0 22px; font-size:17px; line-height:1.78; color:#544B41;">Three years in, something unexpected happened. I fell in love with writing — and specifically with the puzzle of getting people to <em>find</em> what I wrote. That puzzle has a name: Search Engine Optimisation. I became fascinated that words, structured correctly, could quietly pull an audience out of the noise of the internet and deliver it to a single page.</p>
+      <p data-reveal style="margin:0 0 22px; font-size:17px; line-height:1.78; color:#544B41;">A doctor’s instinct is to understand the whole mechanism, not just the symptom — so I went deeper than the words. I trained in the technical machinery that makes content actually work: SEO, AI automation, and web development. Today I build automated content systems with <strong>n8n, Make.com and Zapier</strong>, and I design and manage sites in <strong>WordPress</strong> and beyond — so the publishing never stops and nothing falls through the cracks.</p>
+      <p data-reveal style="margin:0; font-size:17px; line-height:1.78; color:#544B41;">Since then, I’ve helped coaches and brands across many industries become genuine authorities — driving audiences toward them and growing their revenue. I do it with a team, and a system I call the <strong style="color:#BD541F;">Thought Leadership Framework</strong>.</p>
+    </div>
+  </section>
+
+  <!-- TOOLKIT / CAPABILITIES INFOGRAPHIC -->
+  <section style="max-width:1080px; margin:0 auto; padding:clamp(64px,9vw,120px) clamp(20px,5vw,64px);">
+    <div data-reveal>
+      <p style="margin:0 0 14px; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#BD541F;">The toolkit</p>
+      <h2 style="margin:0 0 12px; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(30px,4.5vw,50px); line-height:1.06; max-width:640px;">More than a writer. A full content engine.</h2>
+      <p style="margin:0 0 50px; max-width:620px; font-size:16.5px; line-height:1.7; color:#544B41;">The reason results compound is that I don’t just write — I research, optimise, design and automate the entire pipeline.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1px; background:rgba(27,23,20,0.12); border:1px solid rgba(27,23,20,0.12); border-radius:14px; overflow:hidden;">
+      <div data-reveal style="background:#FBF7EE; padding:30px 26px;"><div style="color:#BD541F; font-size:22px; margin-bottom:12px;">⌕</div><h3 style="margin:0 0 7px; font-size:16.5px; font-weight:800;">SEO &amp; Content Strategy</h3><p style="margin:0; font-size:14px; line-height:1.6; color:#6F655A;">Keyword research, on-page SEO and content architecture that ranks.</p></div>
+      <div data-reveal style="background:#FBF7EE; padding:30px 26px;"><div style="color:#BD541F; font-size:22px; margin-bottom:12px;">⚙</div><h3 style="margin:0 0 7px; font-size:16.5px; font-weight:800;">AI Automation</h3><p style="margin:0; font-size:14px; line-height:1.6; color:#6F655A;">Expert in n8n, Make.com and Zapier — workflows that publish on autopilot.</p></div>
+      <div data-reveal style="background:#FBF7EE; padding:30px 26px;"><div style="color:#BD541F; font-size:22px; margin-bottom:12px;">▦</div><h3 style="margin:0 0 7px; font-size:16.5px; font-weight:800;">Web Design &amp; WordPress</h3><p style="margin:0; font-size:14px; line-height:1.6; color:#6F655A;">Site design, build and management so your blog has a home that converts.</p></div>
+      <div data-reveal style="background:#FBF7EE; padding:30px 26px;"><div style="color:#BD541F; font-size:22px; margin-bottom:12px;">✚</div><h3 style="margin:0 0 7px; font-size:16.5px; font-weight:800;">A Medical Mind</h3><p style="margin:0; font-size:14px; line-height:1.6; color:#6F655A;">Research rigour and clinical accuracy — credible content, never AI slop.</p></div>
+    </div>
+    <!-- tool chips -->
+    <div data-reveal style="display:flex; flex-wrap:wrap; gap:10px; margin-top:30px;">
+      <span style="font-size:13px; font-weight:700; color:#3A332C; background:#EBE2D2; border:1px solid rgba(27,23,20,0.12); padding:9px 16px; border-radius:100px;">n8n</span>
+      <span style="font-size:13px; font-weight:700; color:#3A332C; background:#EBE2D2; border:1px solid rgba(27,23,20,0.12); padding:9px 16px; border-radius:100px;">Make.com</span>
+      <span style="font-size:13px; font-weight:700; color:#3A332C; background:#EBE2D2; border:1px solid rgba(27,23,20,0.12); padding:9px 16px; border-radius:100px;">Zapier</span>
+      <span style="font-size:13px; font-weight:700; color:#3A332C; background:#EBE2D2; border:1px solid rgba(27,23,20,0.12); padding:9px 16px; border-radius:100px;">WordPress</span>
+      <span style="font-size:13px; font-weight:700; color:#3A332C; background:#EBE2D2; border:1px solid rgba(27,23,20,0.12); padding:9px 16px; border-radius:100px;">Keyword Research</span>
+      <span style="font-size:13px; font-weight:700; color:#3A332C; background:#EBE2D2; border:1px solid rgba(27,23,20,0.12); padding:9px 16px; border-radius:100px;">On-page SEO</span>
+      <span style="font-size:13px; font-weight:700; color:#3A332C; background:#EBE2D2; border:1px solid rgba(27,23,20,0.12); padding:9px 16px; border-radius:100px;">Carousel Design</span>
+      <span style="font-size:13px; font-weight:700; color:#3A332C; background:#EBE2D2; border:1px solid rgba(27,23,20,0.12); padding:9px 16px; border-radius:100px;">Web Design</span>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section style="background:#EBE2D2; border-top:1px solid rgba(27,23,20,0.1); border-bottom:1px solid rgba(27,23,20,0.1);">
+    <div style="max-width:1080px; margin:0 auto; padding:clamp(64px,9vw,120px) clamp(20px,5vw,64px);">
+      <p data-reveal style="margin:0 0 14px; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#BD541F;">The path here</p>
+      <h2 data-reveal style="margin:0 0 54px; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(30px,4.5vw,50px); line-height:1.06; max-width:640px;">Two disciplines, one unfair advantage.</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1px; background:rgba(27,23,20,0.12); border:1px solid rgba(27,23,20,0.12); border-radius:12px; overflow:hidden;">
+        <div data-reveal style="background:#F8F3E9; padding:32px 28px;"><div style="font-family:'Instrument Serif',serif; font-size:30px; color:#BD541F;">8 yrs</div><h3 style="margin:14px 0 7px; font-size:16px; font-weight:800;">Medicine &amp; Surgery</h3><p style="margin:0; font-size:14px; line-height:1.6; color:#6F655A;">Obafemi Awolowo University — qualified as a doctor in 2026.</p></div>
+        <div data-reveal style="background:#F8F3E9; padding:32px 28px;"><div style="font-family:'Instrument Serif',serif; font-size:30px; color:#BD541F;">Yr 3</div><h3 style="margin:14px 0 7px; font-size:16px; font-weight:800;">Writing &amp; SEO</h3><p style="margin:0; font-size:14px; line-height:1.6; color:#6F655A;">Discovered the craft of writing and the science of being discovered on search.</p></div>
+        <div data-reveal style="background:#F8F3E9; padding:32px 28px;"><div style="font-family:'Instrument Serif',serif; font-size:30px; color:#BD541F;">+Tech</div><h3 style="margin:14px 0 7px; font-size:16px; font-weight:800;">Automation &amp; Web</h3><p style="margin:0; font-size:14px; line-height:1.6; color:#6F655A;">n8n, Make.com, Zapier, WordPress &amp; web development — the engine behind the words.</p></div>
+        <div data-reveal style="background:#F8F3E9; padding:32px 28px;"><div style="font-family:'Instrument Serif',serif; font-size:30px; color:#BD541F;">Now</div><h3 style="margin:14px 0 7px; font-size:16px; font-weight:800;">Authority builder</h3><p style="margin:0; font-size:14px; line-height:1.6; color:#6F655A;">Turning experts into the names their industries search for — and trust.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY ME -->
+  <section style="background:#221C17; color:#F3EDE2;">
+    <div style="max-width:1080px; margin:0 auto; padding:clamp(64px,9vw,120px) clamp(20px,5vw,64px);">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:clamp(36px,5vw,64px); align-items:center;">
+        <div data-reveal>
+          <p style="margin:0 0 16px; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#E8B27A;">Why a doctor builds your content</p>
+          <h2 style="margin:0 0 22px; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(28px,4vw,46px); line-height:1.08;">Getting the details right isn’t optional. Neither is trust.</h2>
+          <p style="margin:0; font-size:16.5px; line-height:1.72; color:rgba(243,237,226,0.72);">A medical education means I can read the science, separate it from the noise, and translate it into content that’s accurate, credible and genuinely useful. Paired with SEO and automation, that’s content which both earns rankings and keeps readers coming back.</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <div data-reveal style="background:rgba(243,237,226,0.05); border:1px solid rgba(243,237,226,0.14); border-radius:9px; padding:20px 22px;"><div style="font-weight:800; font-size:15.5px; color:#E8B27A;">Accuracy you can stand behind</div><p style="margin:6px 0 0; font-size:14px; color:rgba(243,237,226,0.62); line-height:1.6;">Researched and written with clinical care — never copy-paste slop.</p></div>
+          <div data-reveal style="background:rgba(243,237,226,0.05); border:1px solid rgba(243,237,226,0.14); border-radius:9px; padding:20px 22px;"><div style="font-weight:800; font-size:15.5px; color:#E8B27A;">Discovery, by design</div><p style="margin:6px 0 0; font-size:14px; color:rgba(243,237,226,0.62); line-height:1.6;">SEO and automation baked into every post so it gets found — consistently.</p></div>
+          <div data-reveal style="background:rgba(243,237,226,0.05); border:1px solid rgba(243,237,226,0.14); border-radius:9px; padding:20px 22px;"><div style="font-weight:800; font-size:15.5px; color:#E8B27A;">A team, not a freelancer</div><p style="margin:6px 0 0; font-size:14px; color:rgba(243,237,226,0.62); line-height:1.6;">Me and my team build your authority every working day, at scale.</p></div>
+        </div>
+      </div>
+      <div data-reveal style="margin-top:48px;"><a href="Services.dc.html" style="text-decoration:none; font-size:15px; font-weight:700; color:#16120F; background:#E8B27A; padding:14px 26px; border-radius:6px; transition:background .2s ease;" style-hover="background:#F3EDE2">See how I’ll build your authority →</a></div>
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  async componentDidMount(){
+    this.loadPhoto();
+    const root = document.getElementById('seAbout');
+    try { const m = await import('./reveal.js'); m.initReveal(root); }
+    catch(e){ if(root){ root.classList.add('js-ready'); root.querySelectorAll('[data-reveal]').forEach((el)=>el.classList.add('seIn')); } }
+  }
+  async loadPhoto(){
+    try { const m = await import('./assets.js'); const el = document.getElementById('seHeadshot'); if (el) el.style.backgroundImage = 'url("' + m.HEADSHOT + '")'; } catch(e){ console.warn('assets load failed', e); }
+  }
+  renderVals(){ return {}; }
+}
+</script>
+</body>
+</html>

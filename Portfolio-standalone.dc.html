@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1400&q=70" data-resource-id="imgFitness" />
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1400&q=70" data-resource-id="imgHealth" />
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=70" data-resource-id="imgAutomotive" />
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1400&q=70" data-resource-id="imgRealestate" />
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=70" data-resource-id="imgFashion" />
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1621761191319-c6fb62004040?auto=format&fit=crop&w=1400&q=70" data-resource-id="imgCrypto" />
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1400&q=70" data-resource-id="imgDating" />
+<meta name="ext-resource-dependency" content="./reveal.js" data-resource-id="revealJs" />
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#16120F">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#16120F"/>
+    <rect x="360" y="250" width="480" height="150" rx="20" fill="#BD541F"/>
+    <rect x="360" y="430" width="230" height="120" rx="16" fill="#3A322B"/>
+    <rect x="610" y="430" width="230" height="120" rx="16" fill="#3A322B"/>
+    <circle cx="600" cy="180" r="10" fill="#E8B27A"/>
+  </svg>
+</template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;} html,body{margin:0;padding:0;}
+  @keyframes seCardIn{from{transform:translateY(14px)}to{transform:none}}
+  @keyframes seKen{from{transform:scale(1.02) translate(0,0)}to{transform:scale(1.12) translate(-1.5%,-1.5%)}}
+  @keyframes sePulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.3)}}
+  @keyframes seFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+  @keyframes seFloat2{0%,100%{transform:translateY(0)}50%{transform:translateY(12px)}}
+  @media (prefers-reduced-motion:reduce){*{animation:none !important;}}
+  #sePortfolio.js-ready [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+  #sePortfolio.js-ready [data-reveal].seIn{opacity:1;transform:none;}
+  .seCard{animation:seCardIn .5s ease both;}
+</style>
+</helmet>
+<div id="sePortfolio" style="background:#F3EDE2; color:#1B1714; font-family:Archivo,sans-serif; overflow-x:hidden;">
+  <dc-import name="Nav" active="portfolio" hint-size="100%,80px"></dc-import>
+
+  <!-- HERO -->
+  <section style="position:relative; background:#16120F; color:#F3EDE2; overflow:hidden;">
+    <div style="position:absolute; inset:0; background:radial-gradient(110% 90% at 85% 0%, rgba(189,84,31,0.24), transparent 55%); pointer-events:none;"></div>
+    <div style="position:absolute; z-index:1; top:18%; right:8%; width:70px; height:70px; border:1.5px solid rgba(232,178,122,0.3); border-radius:50%; animation:seFloat 7s ease-in-out infinite; pointer-events:none;"></div>
+    <div style="position:absolute; z-index:1; bottom:24%; right:20%; width:12px; height:12px; background:#E8B27A; border-radius:50%; animation:seFloat2 5.5s ease-in-out infinite; pointer-events:none;"></div>
+    <div style="position:relative; z-index:2; max-width:1080px; margin:0 auto; padding:clamp(44px,6vw,88px) clamp(20px,5vw,64px) clamp(40px,5vw,64px);">
+      <p data-reveal style="margin:0 0 22px; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#E8B27A;">The portfolio</p>
+      <h1 data-reveal style="margin:0 0 24px; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(38px,5.8vw,70px); line-height:1.03; letter-spacing:-1px; max-width:880px;">Authority content across seven industries.</h1>
+      <p data-reveal style="margin:0; max-width:680px; font-size:clamp(16px,1.6vw,19px); line-height:1.66; color:rgba(243,237,226,0.78);">A curated reading list of the calibre, topic and editorial standard I write to — 140 active, verified articles from the most respected names across fitness, health, real estate, automotive, fashion, crypto and relationships, published 2024–2026. This is the bar. Your blog clears it, every working day.</p>
+      <div data-reveal style="display:flex; flex-wrap:wrap; gap:24px; margin-top:34px;">
+        <div style="display:flex; align-items:baseline; gap:9px;"><span style="font-family:'Instrument Serif',serif; font-size:30px; color:#E8B27A;">140</span><span style="font-size:13px; color:rgba(243,237,226,0.6); line-height:1.3;">verified, active<br>articles</span></div>
+        <div style="width:1px; align-self:stretch; background:rgba(243,237,226,0.2);"></div>
+        <div style="display:flex; align-items:baseline; gap:9px;"><span style="font-family:'Instrument Serif',serif; font-size:30px; color:#E8B27A;">7</span><span style="font-size:13px; color:rgba(243,237,226,0.6); line-height:1.3;">industries<br>covered</span></div>
+        <div style="width:1px; align-self:stretch; background:rgba(243,237,226,0.2);"></div>
+        <div style="display:flex; align-items:baseline; gap:9px;"><span style="font-family:'Instrument Serif',serif; font-size:30px; color:#E8B27A;">’24–’26</span><span style="font-size:13px; color:rgba(243,237,226,0.6); line-height:1.3;">current &amp;<br>relevant</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER TABS -->
+  <section style="position:sticky; top:0; z-index:20; background:rgba(243,237,226,0.92); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid rgba(27,23,20,0.12);">
+    <div style="max-width:1180px; margin:0 auto; padding:14px clamp(20px,5vw,64px); display:flex; gap:10px; overflow-x:auto; -ms-overflow-style:none; scrollbar-width:none;">
+      <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="7">
+        <button type="button" data-key="{{ t.key }}" onClick="{{ t.onClick }}" style="flex-shrink:0; cursor:pointer; white-space:nowrap; font-family:Archivo,sans-serif; font-size:13.5px; font-weight:700; padding:10px 18px; border-radius:100px; border:1px solid rgba(27,23,20,0.18); background:transparent; color:#3A332C; transition:all .18s ease;">{{ t.label }} <span style="opacity:0.55; font-weight:600;">{{ t.count }}</span></button>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- GRID -->
+  <section style="max-width:1180px; margin:0 auto; padding:clamp(28px,4vw,52px) clamp(20px,5vw,64px) clamp(56px,8vw,96px);">
+    <div id="sePfBanner" style="position:relative; height:clamp(190px,27vw,320px); border-radius:20px; overflow:hidden; margin-bottom:34px; background:#2A1A12; box-shadow:0 20px 48px rgba(27,23,20,0.16);">
+      <div id="sePfBannerImg" style="position:absolute; inset:0; background-size:cover; background-position:center; animation:seKen 22s ease-in-out infinite alternate;"></div>
+      <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(22,18,15,0.12), rgba(22,18,15,0.82));"></div>
+      <div style="position:absolute; top:12%; right:7%; width:64px; height:64px; border:1.5px solid rgba(243,237,226,0.45); border-radius:50%; animation:seFloat 7s ease-in-out infinite;"></div>
+      <div style="position:absolute; top:42%; right:17%; width:12px; height:12px; background:#E8B27A; border-radius:50%; animation:seFloat2 5.5s ease-in-out infinite;"></div>
+      <div style="position:absolute; bottom:24%; right:11%; width:26px; height:26px; border:1.5px solid rgba(232,178,122,0.7); border-radius:50%; animation:seFloat 6s ease-in-out infinite;"></div>
+      <div style="position:absolute; left:0; bottom:0; padding:clamp(20px,3vw,36px);">
+        <div style="display:inline-flex; align-items:center; gap:9px; padding:6px 13px; border-radius:100px; background:rgba(243,237,226,0.15); -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px); margin-bottom:13px;">
+          <span style="width:7px; height:7px; border-radius:50%; background:#E8B27A; animation:sePulse 2.2s ease-in-out infinite;"></span>
+          <span style="font-size:10.5px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#F3EDE2;">{{ activeCount }} verified articles · 2024–2026</span>
+        </div>
+        <div style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(30px,5vw,56px); color:#F3EDE2; line-height:1; text-shadow:0 2px 24px rgba(0,0,0,0.4);">{{ activeLabel }}</div>
+      </div>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px;">
+      <sc-for list="{{ items }}" as="it" hint-placeholder-count="9">
+        <a class="seCard" href="{{ it.u }}" target="_blank" rel="noopener" style="display:flex; flex-direction:column; gap:10px; text-decoration:none; color:#1B1714; background:#FBF7EE; border:1px solid rgba(27,23,20,0.1); border-radius:12px; padding:24px 24px 22px; transition:transform .16s ease, border-color .16s ease, box-shadow .16s ease;" style-hover="transform:translateY(-3px); border-color:#BD541F; box-shadow:0 14px 30px rgba(27,23,20,0.1)">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+            <span style="font-size:10.5px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:#BD541F;">{{ it.p }}</span>
+            <span style="font-size:10.5px; font-weight:700; letter-spacing:0.5px; text-transform:uppercase; color:#A08B70;">{{ it.dt }}</span>
+          </div>
+          <span style="font-size:17px; font-weight:800; line-height:1.3;">{{ it.t }}</span>
+          <span style="font-size:13.5px; line-height:1.58; color:#6F655A;">{{ it.d }}</span>
+          <span style="margin-top:4px; font-size:12.5px; font-weight:700; color:#BD541F;">Read article →</span>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#221C17; color:#F3EDE2;">
+    <div style="max-width:900px; margin:0 auto; padding:clamp(56px,8vw,96px) clamp(20px,5vw,64px); text-align:center;">
+      <h2 style="margin:0 0 18px; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(28px,4vw,46px); line-height:1.08;">Imagine work of this calibre — under <em style="font-style:italic; color:#E8B27A;">your</em> name.</h2>
+      <p style="margin:0 auto 30px; max-width:560px; font-size:16.5px; line-height:1.7; color:rgba(243,237,226,0.72);">That’s exactly what the Thought Leadership Framework delivers — in your field. Let’s build your library.</p>
+      <a href="Pricing.dc.html" style="text-decoration:none; font-size:15px; font-weight:700; color:#16120F; background:#E8B27A; padding:15px 30px; border-radius:6px; transition:background .2s ease;" style-hover="background:#F3EDE2">View packages →</a>
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { active: 'fitness' };
+  async componentDidMount(){
+    const root = document.getElementById('sePortfolio');
+    this.setBanner();
+    try { var rv=(window.__resources&&window.__resources.revealJs)||'./reveal.js'; const m = await import(rv); m.initReveal(root); }
+    catch(e){ if(root){ root.classList.add('js-ready'); root.querySelectorAll('[data-reveal]').forEach((el)=>el.classList.add('seIn')); } }
+  }
+  componentDidUpdate(){ this.setBanner(); }
+  bannerMeta(){ return {
+    fitness:{ img:'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1400&q=70', grad:'linear-gradient(135deg,#7A2E12,#BD541F)' },
+    health:{ img:'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1400&q=70', grad:'linear-gradient(135deg,#1F5A4B,#2E8B6F)' },
+    automotive:{ img:'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=70', grad:'linear-gradient(135deg,#22303B,#3A5666)' },
+    realestate:{ img:'https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1400&q=70', grad:'linear-gradient(135deg,#4A3A22,#8A6A3A)' },
+    fashion:{ img:'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=70', grad:'linear-gradient(135deg,#5A2240,#A8456F)' },
+    crypto:{ img:'https://images.unsplash.com/photo-1621761191319-c6fb62004040?auto=format&fit=crop&w=1400&q=70', grad:'linear-gradient(135deg,#2E2A12,#9A7A22)' },
+    dating:{ img:'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1400&q=70', grad:'linear-gradient(135deg,#5A1E2A,#A8455A)' }
+  }; }
+  setBanner(){ const m=this.bannerMeta()[this.state.active]; if(!m) return; const c=document.getElementById('sePfBanner'); const im=document.getElementById('sePfBannerImg'); if(c) c.style.background=m.grad; var rid='img'+this.state.active.charAt(0).toUpperCase()+this.state.active.slice(1); var src=(window.__resources&&window.__resources[rid])||m.img; if(im) im.style.backgroundImage='url("'+src+'")';
+    const active=this.state.active;
+    document.querySelectorAll('#sePortfolio button[data-key]').forEach(function(b){ const on=b.getAttribute('data-key')===active; b.style.background=on?'#BD541F':'transparent'; b.style.color=on?'#F3EDE2':'#3A332C'; b.style.borderColor=on?'#BD541F':'rgba(27,23,20,0.18)'; });
+  }
+  componentWillUnmount(){}
+  data(){
+    return {
+      fitness: { label:'Fitness', items:[
+        {p:'ACE Fitness',dt:'Nov 2024',t:'10 Fitness Trends to Look Forward to in 2025',d:'How coaches complement obesity medications, design resistance programs and leverage wearables.',u:'https://www.acefitness.org/resources/pros/expert-articles/8776/10-fitness-trends-to-look-forward-to-in-2025/'},
+        {p:'ACE Fitness',dt:'Dec 2025',t:'10 Fitness Trends in 2026 and Beyond',d:'AI and wearables shifting from tracking to programming, and hybrid care models.',u:'https://www.acefitness.org/resources/pros/expert-articles/9043/10-fitness-trends-in-2026-and-beyond/'},
+        {p:'ACE Fitness',dt:'Feb 2026',t:'Nutrition as a Core Driver of Healthy Living',d:'Translating the 2025 Dietary Guidelines into practical coaching guidance.',u:'https://www.acefitness.org/continuing-education/certified/february-2026/9055/nutrition-a-core-driver-of-healthy-living/'},
+        {p:'TrueCoach',dt:'Jan 2025',t:'Top Fitness Trends to Watch in 2025',d:'Virtual training, wearable data and holistic wellness coaching for trainers.',u:'https://truecoach.co/blog/top-fitness-trends-to-watch-in-2025-what-every-trainer-should-know/'},
+        {p:'TrueCoach',dt:'Feb 2025',t:'4 Fitness Trends That Will Shape 2025',d:'AI-personalized programs, hybrid coaching, longevity and recovery strategies.',u:'https://truecoach.co/blog/4-fitness-trends-that-will-shape-2025/'},
+        {p:'TrueCoach',dt:'2025',t:'AI vs. Human Trainers: The Power of Both',d:'How AI automates check-ins while human coaching stays irreplaceable.',u:'https://truecoach.co/blog/ai-vs-human-trainers-the-power-of-both-in-coaching/'},
+        {p:'TrueCoach',dt:'Jan 2025',t:'How Advanced Tech & AI Will Impact PT in 2025',d:'A practical guide to AI in client management and personalized programming.',u:'https://truecoach.co/blog/how-advanced-tech-and-artificial-intelligence-will-impact-personal-training-in-2025/'},
+        {p:'TrueCoach',dt:'2024',t:'5 Fitness Business Ideas to Launch in 2024',d:'Technology integration, niche focus, retreats and nutrition coaching models.',u:'https://truecoach.co/blog/5-fitness-business-ideas-to-launch-in-2024/'},
+        {p:'TrueCoach',dt:'2024',t:'Braving the Digital Shift: Veteran Coaches Online',d:'How experienced in-person coaches successfully transitioned online.',u:'https://truecoach.co/blog/braving-the-digital-shift-how-veteran-coaches-flourish-in-the-online-fitness-realm/'},
+        {p:'TrueCoach',dt:'Apr 2025',t:'How to Become an Online Fitness Coach: 6 Steps',d:'Niche selection, content creation, virtual formats and platform setup.',u:'https://truecoach.co/blog/6-steps-to-becoming-an-online-fitness-coach/'},
+        {p:'TRAINFITNESS',dt:'Jan 2025',t:'Fitness Trends for 2025',d:'Wearable tech, DNA-based nutrition and holistic health as a core pillar.',u:'https://train.fitness/personal-trainer-blogs/fitness-trends-for-2025'},
+        {p:'TRAINFITNESS',dt:'Apr 2026',t:'Personal Trainer Blogs (Hub)',d:'Active hub: PT, group exercise, nutrition, strength & conditioning.',u:'https://train.fitness/personal-trainer-blogs'},
+        {p:'Trainerize',dt:'2024',t:'2024 Personal Training Trends',d:'How online training became the norm and how coaches leverage platforms.',u:'https://www.trainerize.com/blog/2024-personal-training-trends/'},
+        {p:'Trainerize',dt:'Feb 2025',t:'2025 State of the Personal Trainer Industry Report',d:'Data-backed report on holistic coaching demand and business models.',u:'https://www.trainerize.com/blog/state-of-the-personal-trainer-an-industry-report-by-abc-trainerize/'},
+        {p:'PT Distinction',dt:'2025',t:'15 Fitness Experts on Instagram to Inspire PTs',d:'Profiles blending training science with engaging social presence.',u:'https://www.ptdistinction.com/blog/15-fitness-experts-on-instagram-to-inspire-personal-trainers'},
+        {p:'Scott Laidler',dt:'2025',t:'2025 Fitness Trends — From a Personal Trainer',d:'A practising coach’s view on AI, wearables and human accountability.',u:'https://scottlaidler.com/2025-fitness-trends-from-personal-trainer/'},
+        {p:'FitBudd',dt:'2025',t:'Top Personal Training & Fitness Trends of 2025',d:'Data on fitness demand across the US, UK, Australia and Canada.',u:'https://fitbudd.com/post/top-personal-training-and-fitness-trends-of-2025'},
+        {p:'BarBend',dt:'Jan 2025',t:'Best Fitness Content Creators to Follow in 2024',d:'Profiles of certified coaches and creators building credible brands.',u:'https://barbend.com/news/best-fitness-content-creators-to-follow-in-2024/'},
+        {p:'WodGuru',dt:'Jan 2026',t:'Personal Trainer vs Fitness Coach: 5 Insights for 2026',d:'Salary data, online revenue models and SaaS tools for scaling.',u:'https://wod.guru/blog/personal-trainer-vs-fitness-coach/'},
+        {p:'Precision Nutrition',dt:'’24–’26',t:'Precision Nutrition Blog Hub',d:'Evidence-based articles and infographics on nutrition and coaching.',u:'https://www.precisionnutrition.com/blog'}
+      ]},
+      health: { label:'Health & Wellness', items:[
+        {p:'Well+Good',dt:'Dec 2024',t:'Our 10 Favorite Wellness Tips From 2024',d:'Sleep hygiene, mindfulness breathing, protein breakfasts and gut health.',u:'https://www.wellandgood.com/health/our-favorite-wellness-tips-from-2024'},
+        {p:'McKinsey',dt:'2025',t:'The Future of Wellness: 2025 Consumer Survey',d:'9,000+ consumers across six wellness dimensions and generational shifts.',u:'https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/future-of-wellness-trends'},
+        {p:'Dr. Axe',dt:'2024',t:'Top Wellness Trends of 2024 & Predictions for 2025',d:'Personalized nutrition, mental health focus and sleep optimization tech.',u:'https://draxe.com/health/wellness-trends-2024/'},
+        {p:'Dr. Axe',dt:'2025',t:'Wellness Trends 2025: Personalized Health',d:'AI health coaches, women’s health innovations and functional nutrition.',u:'https://draxe.com/health/wellness-trends-2025/'},
+        {p:'Shopify',dt:'2025',t:'12 Wellness Trends to Capitalize On for 2025',d:'The $2T wellness market, DNA-based vitamins and wearables.',u:'https://www.shopify.com/enterprise/blog/health-wellness-trends'},
+        {p:'Sleep.me',dt:'2025',t:'2025 Wellness Trends: Sleep, Fitness & More',d:'Mental health, whole-body sleep optimization and aromatherapy.',u:'https://sleep.me/post/top-wellness-and-health-trends'},
+        {p:'Plunge',dt:'2025',t:'2025 Health Trends: The Future of Wellness',d:'Sleep as active health, recovery tools, cold plunge and contrast therapy.',u:'https://plunge.com/blogs/blog/health-wellness-trends'},
+        {p:'Trainerize',dt:'Nov 2025',t:'Top 10 Wellness Trends 2025',d:'The $1.8T market pushing coaches into stress, sleep and behaviour change.',u:'https://www.trainerize.com/blog/wellness-trends/'},
+        {p:'ACHS',dt:'2024',t:'Trends in Integrative Health & Wellness: 2024',d:'Corporate wellness growth, beauty-from-within and healthy aging.',u:'https://achs.edu/blog/2024-integrative-health-wellness-trends/'},
+        {p:'Healthline',dt:'Daily',t:'Healthline Health News Hub',d:'GLP-1 drugs, wearables, infectious disease and expert-reviewed news.',u:'https://www.healthline.com/health-news'},
+        {p:'Healthline',dt:'’25–’26',t:'Healthline Nutrition: Healthy Eating in Real Life',d:'Personalized vitamins, anti-inflammatory foods and gut health.',u:'https://www.healthline.com/nutrition'},
+        {p:'ZenNutri',dt:'Jan 2025',t:'Wellness Trends to Watch in 2025: Stress & Sleep',d:'Adaptogens, circadian alignment and mindfulness with supplements.',u:'https://www.zennutri.com/blogs/blog/wellness-trends-to-watch-in-2025-whats-new-in-stress-and-sleep-health'},
+        {p:'ACE Fitness',dt:'Feb 2026',t:'Nutrition as a Core Driver of Healthy Living',d:'2025 Dietary Guidelines as practical coaching guidance.',u:'https://www.acefitness.org/continuing-education/certified/february-2026/9055/nutrition-a-core-driver-of-healthy-living/'},
+        {p:'ACE Fitness',dt:'Dec 2025',t:'10 Fitness & Health Trends in 2026 and Beyond',d:'Hybrid care models merging coaches, dietitians and physicians.',u:'https://www.acefitness.org/resources/pros/expert-articles/9043/10-fitness-trends-in-2026-and-beyond/'},
+        {p:'Precision Nutrition',dt:'’24–’26',t:'Precision Nutrition Blog',d:'Research-backed articles on nutrition science and behaviour change.',u:'https://www.precisionnutrition.com/blog'},
+        {p:'mindbodygreen',dt:'’25–’26',t:'Wellness Trends Hub',d:'Mental, physical, spiritual and emotional well-being, expert-led.',u:'https://www.mindbodygreen.com/wellness-trends'},
+        {p:'TrueCoach',dt:'Jan 2025',t:'Top Fitness Trends to Watch in 2025',d:'Mind-body connection, nutrition tracking and lifestyle coaching.',u:'https://truecoach.co/blog/top-fitness-trends-to-watch-in-2025-what-every-trainer-should-know/'},
+        {p:'TRAINFITNESS',dt:'Jan 2025',t:'Fitness Trends for 2025',d:'Wearable tech, DNA-based nutrition and holistic fitness.',u:'https://train.fitness/personal-trainer-blogs/fitness-trends-for-2025'},
+        {p:'Scott Laidler',dt:'2025',t:'2025 Fitness Trends (From a Personal Trainer)',d:'Digital wellness market growth projections to $65.7bn in 2025.',u:'https://scottlaidler.com/2025-fitness-trends-from-personal-trainer/'},
+        {p:'FitBudd',dt:'2025',t:'Top Personal Training & Fitness Trends of 2025',d:'Wellness demand across US, UK, Australia and Canada.',u:'https://fitbudd.com/post/top-personal-training-and-fitness-trends-of-2025'}
+      ]},
+      automotive: { label:'Automotive', items:[
+        {p:'Edmunds',dt:'Dec 2025',t:'Three Trends That Will Shape the U.S. Auto Market in 2026',d:'The affordability divide, EV share dip and off-lease vehicles returning.',u:'https://www.edmunds.com/car-news/trends-that-will-shape-2026-car-market-edmunds-insights.html'},
+        {p:'Edmunds',dt:'Nov 2025',t:'Used Cars Linger as Prices Climb, But EVs Move Fast',d:'Q3 2025 data: 3-year-old prices up 5%, EVs sold fastest at 34 days.',u:'https://www.edmunds.com/car-news/edmunds-q3-2025-insights-used-car-report.html'},
+        {p:'Cars.com',dt:'2025',t:'EV Buying Guide: What to Know Before Purchasing',d:'Range, home charging, cold-weather performance and tax credit impact.',u:'https://www.cars.com/articles/what-to-know-before-purchasing-an-electric-vehicle-a-buying-guide-448149/'},
+        {p:'Cars.com',dt:'Sep 2025',t:'The EV Tax Credit Is Done — What Should Shoppers Do?',d:'Finding EV deals through state incentives after the federal credit expired.',u:'https://www.cars.com/articles/the-ev-tax-credit-is-done-what-should-an-ev-shopper-do-now-516544/'},
+        {p:'Cars.com',dt:'Mar 2025',t:'If Tariffs Increase Car Prices, How Else Can You Save?',d:'Navigating purchases under tariff pressure with fuel-efficient choices.',u:'https://www.cars.com/articles/if-tariffs-increase-car-prices-how-else-can-you-save-money-506019/'},
+        {p:'Cars.com',dt:'Aug 2025',t:'Which Tariffs Could Affect Your Next Car?',d:'A running breakdown of tariff proposals affecting auto imports.',u:'https://www.cars.com/articles/which-proposed-tariffs-could-affect-your-next-car-504472/'},
+        {p:'Cars.com',dt:'Apr 2025',t:'2025 Affordability Report: Best Value New Cars',d:'Best-value vehicles by price, safety, fuel economy and US assembly.',u:'https://www.cars.com/articles/tariffs-loom-but-shoppers-still-have-options-cars-com-releases-its-2025-affordability-report-506575/'},
+        {p:'Cars.com',dt:'Dec 2024',t:'2025 Automotive Trends: Prices High But Silver Linings',d:'Used EV prices dropped twice as fast; new EV inventory grew 35%.',u:'https://www.cars.com/articles/2025-trends-car-prices-remain-stubbornly-high-in-new-year-and-potential-tariffs-could-add-pressure-but-shoppers-may-find-silver-lining-in-new-affordable-inventory-according-to-cars-com-502774/'},
+        {p:'Edmunds',dt:'Active',t:'Edmunds Car News Hub',d:'New model releases, pricing trends, EV updates and buying guides.',u:'https://www.edmunds.com/car-news/'},
+        {p:'MotorTrend',dt:'Daily',t:'MotorTrend News & Features',d:'Vehicle reviews, EV tech, performance benchmarks and industry news.',u:'https://www.motortrend.com/news/'},
+        {p:'Car and Driver',dt:'Daily',t:'Car and Driver News Hub',d:'Expert reviews, industry news, EV coverage and buying guides.',u:'https://www.caranddriver.com/news/'},
+        {p:'Car and Driver',dt:'2025',t:'Best Electric Cars for 2025 and 2026',d:'Ranking the best EVs by range, value, performance and usability.',u:'https://www.caranddriver.com/best-electric-cars'},
+        {p:'Car and Driver',dt:'2025',t:'Best SUVs for 2025–2026',d:'Top SUVs by size, use case and budget with test data.',u:'https://www.caranddriver.com/best-suvs'},
+        {p:'Kelley Blue Book',dt:'’24–’26',t:'Car Buying Advice Blog',d:'Valuation, buying and selling tips, financing and comparisons.',u:'https://www.kbb.com/car-advice/'},
+        {p:'Kelley Blue Book',dt:'2025',t:'2025 Best Cars Awards',d:'Best cars across 20+ categories based on real-world data.',u:'https://www.kbb.com/best-cars/'},
+        {p:'Consumer Reports',dt:'’24–’26',t:'Cars Blog Hub',d:'Independent testing, reliability data and safety ratings.',u:'https://www.consumerreports.org/cars/'},
+        {p:'Autotrader',dt:'’24–’26',t:'Car Buying Tips Blog',d:'Negotiation tips, trade-in strategies and financing options.',u:'https://www.autotrader.com/car-tips'},
+        {p:'The Drive',dt:'Daily',t:'Automotive News',d:'Car culture, EV tech, autonomous vehicles and policy news.',u:'https://www.thedrive.com/news'},
+        {p:'Automotive News',dt:'’25–’26',t:'Industry Trade Hub',d:'Dealership business, OEM strategies, EV policy and tariff impact.',u:'https://www.autonews.com/'},
+        {p:'Green Car Reports',dt:'Daily',t:'EV & Hybrid News',d:'Charging infrastructure, range, incentives and new model launches.',u:'https://www.greencarreports.com/'}
+      ]},
+      realestate: { label:'Real Estate', items:[
+        {p:'Redfin',dt:'Jun 2026',t:'Is Now a Good Time to Buy a House?',d:'Live rate analysis at 6.66% and why rates stay elevated into 2026.',u:'https://www.redfin.com/blog/is-now-a-good-time-to-buy-a-house/'},
+        {p:'Redfin',dt:'Dec 2025',t:'2025 Housing Market Year in Review',d:'Buyers stepping back, the NAR commission aftermath and consolidation.',u:'https://www.redfin.com/news/the-real-estate-2025-year-in-review/'},
+        {p:'Redfin',dt:'Jun 2025',t:'How to Buy a House in 2025: The 12-Step Guide',d:'Pre-approval, agent selection, offers, inspection and closing.',u:'https://www.redfin.com/blog/how-to-buy-a-home/'},
+        {p:'Redfin',dt:'Jul 2025',t:'12 Must-Read Tips to Sell Your Home in 2025',d:'Photography, pricing strategy, staging and listing timing.',u:'https://www.redfin.com/blog/real-estate-tips-for-home-sellers/'},
+        {p:'Redfin',dt:'Aug 2025',t:'21 Essential Tips for First-Time Homebuyers',d:'Down payment assistance, mortgage types and credit strategies.',u:'https://www.redfin.com/blog/tips-for-first-time-homebuyers/'},
+        {p:'Redfin',dt:'Mar 2026',t:'Days on Market: Tips for Buyers and Sellers',d:'Typical US home sat 66 days; phased marketing and supply.',u:'https://www.redfin.com/blog/days-on-market-real-estate/'},
+        {p:'Redfin',dt:'Nov 2025',t:'First-Time Home Buying Checklist: 15 Things',d:'Credit review, agent selection, inspection prep and closing.',u:'https://www.redfin.com/blog/checklist-for-buying-a-house/'},
+        {p:'Redfin',dt:'Jan 2025',t:'What Do You Need to Buy a House in 2025?',d:'Credit scores, employment history and mortgage rate forecasts.',u:'https://www.redfin.com/blog/what-you-need-to-buy-a-house/'},
+        {p:'Redfin',dt:'Oct 2025',t:'14 First-Time Homebuyer Tips From Reddit',d:'Hidden costs, insurance risks and why emergency funds matter.',u:'https://www.redfin.com/blog/first-time-homebuying-advice-from-reddit/'},
+        {p:'Redfin',dt:'Aug 2025',t:'Buying a New Build? What First-Timers Should Know',d:'Construction loans, FHA one-time close and building costs.',u:'https://www.redfin.com/blog/first-time-home-buyer-new-construction/'},
+        {p:'Redfin',dt:'May 2026',t:'Am I Ready to Buy a House? 8 Signs',d:'Employment docs, debt-to-income, emergency funds and credit.',u:'https://www.redfin.com/blog/am-i-ready-to-buy-a-house/'},
+        {p:'Zillow',dt:'Dec 2024',t:'Housing Market Predictions for 2025',d:'More inventory, slower value growth and 4.3M existing sales.',u:'https://www.zillow.com/learn/housing-market-predictions/'},
+        {p:'Zillow',dt:'May 2026',t:'Advice for First-Time Home Buyers: 21 Tips',d:'House hacking, fixer-uppers and pre-qualification strategy.',u:'https://www.zillow.com/learn/home-buyer-tips/'},
+        {p:'NAR',dt:'Nov 2024',t:'What’s Next for the 2025 Housing Market?',d:'Yun projects existing sales up 9% and new sales up 11%.',u:'https://www.nar.realtor/news/real-estate-news/whats-next-for-the-2025-housing-market'},
+        {p:'NAR',dt:'Dec 2024',t:'What Readers Were Talking About Most in 2024',d:'Commission changes, MLS evolution and buyer/seller trends.',u:'https://www.nar.realtor/magazine/real-estate-news/what-our-readers-were-talking-about-most-in-2024'},
+        {p:'Inman',dt:'Dec 2025',t:'Redfin CEO: 10 Shifts That Defined Real Estate in 2025',d:'Affordability, housing reform politics and consolidation.',u:'https://www.inman.com/2025/12/30/redfin-ceo-these-10-shifts-defined-real-estate-in-2025/'},
+        {p:'Inman',dt:'’25–’26',t:'Inman Real Estate News Hub',d:'Agent strategies, brokerage news, policy and market analysis.',u:'https://www.inman.com/'},
+        {p:'BiggerPockets',dt:'’24–’26',t:'Real Estate Investing Blog',d:'Rental analysis, house hacking, BRRRR and passive income.',u:'https://www.biggerpockets.com/blog'},
+        {p:'Realtor.com',dt:'Daily',t:'News & Insights Hub',d:'Housing data, buyer/seller guides and neighborhood intelligence.',u:'https://www.realtor.com/news/'},
+        {p:'Bankrate',dt:'’25–’26',t:'Real Estate & Mortgage Blog',d:'Mortgage rates, refinancing, first-time guides and home equity.',u:'https://www.bankrate.com/real-estate/'}
+      ]},
+      fashion: { label:'Fashion & Beauty', items:[
+        {p:'Refinery29',dt:'Mar 2025',t:'9 Fashion Trends Defining 2025: Capes to Bubble Skirts',d:'Capes, bubble skirts, sheer fabrics and maximalist individualism.',u:'https://www.refinery29.com/en-us/fashion-trends-2025'},
+        {p:'Refinery29',dt:'Jun 2025',t:'Guide to 2025’s Hottest Summer Fashion Trends',d:'Coastal chic, elevated athleisure, boho-luxe and polka dots.',u:'https://www.refinery29.com/en-us/summer-fashion-trends-2025'},
+        {p:'Refinery29',dt:'2024',t:'8 Fashion Trends & Styles Defining 2024',d:'Short suits, the no-pants aesthetic, preppy college-core.',u:'https://www.refinery29.com/en-us/fashion-trends-2024'},
+        {p:'Who What Wear',dt:'Nov 2024',t:'The State of Style: 7 Shifts Defining 2024',d:'Minimalism to maximalism and the explosion of personal style.',u:'https://www.whowhatwear.com/fashion/trends/state-of-style-2024'},
+        {p:'Who What Wear',dt:'Nov 2024',t:'The Trends That Shaped 2024',d:'The “modern bourgeoisie” aesthetic as fashion’s next chapter.',u:'https://www.whowhatwear.com/living/who-what-wear-podcast-state-of-style-2024'},
+        {p:'Who What Wear',dt:'Mar 2025',t:'30 Fashion Items That Will Define Style in 2025',d:'Leopard coats, lace-trim slips, tied blazers and top-handle bags.',u:'https://www.whowhatwear.com/fashion/shopping/what-to-buy-in-2025'},
+        {p:'Who What Wear',dt:'May 2025',t:'The Biggest Spring/Summer 2025 Runway Trends',d:'Soft power suiting and the “modern socialite” aesthetic.',u:'https://www.whowhatwear.com/fashion/spring/spring-summer-2025-fashion-trends'},
+        {p:'Who What Wear',dt:'Dec 2025',t:'7 Best Trends From 2025 Continuing Into 2026',d:'V2K sneakers, slingbacks and faux-fur with lasting status.',u:'https://www.whowhatwear.com/fashion/trends/best-2025-trends-for-2026'},
+        {p:'Who What Wear',dt:'May 2026',t:'Trends Hub',d:'Latest fashion from runways, street style and social media.',u:'https://www.whowhatwear.com/fashion/trends'},
+        {p:'Business of Fashion',dt:'Jan 2025',t:'The Top Beauty Trends to Watch in 2025',d:'Fragrance as category of the year, K-beauty toners and glam.',u:'https://www.businessoffashion.com/articles/beauty/the-top-beauty-trends-to-watch-in-2025/'},
+        {p:'Fashionista',dt:'Jan 2025',t:'7 Beauty Trends Poised to Take Over 2025',d:'Blush as hero product, skincare-makeup hybrids and body care.',u:'https://fashionista.com/2025/01/biggest-beauty-trends-predictions-2025'},
+        {p:'Glo Skin Beauty',dt:'2024',t:'Skincare & Beauty Trends 2024–2025',d:'Skin minimalism 2.0, skin cycling and SPF as non-negotiable.',u:'https://www.gloskinbeauty.com/blog/skincare-beauty-trends'},
+        {p:'Beauty Pie',dt:'Dec 2024',t:'The Big Beauty Trends Report 2024/25',d:'Data on 408 beauty trends — contrast makeup and LED treatments.',u:'https://www.beautypie.com/blog/beauty-trends-report'},
+        {p:'Numerator',dt:'2024',t:'2024 Beauty Industry Trends: Gen Z & Skincare',d:'58% wear makeup to feel confident; Gen Z identity-driven beauty.',u:'https://www.numerator.com/resources/blog/beauty-trends/'},
+        {p:'NW College',dt:'May 2025',t:'2025 Beauty Trends Making a Comeback',d:'90s supermodel beauty, skinimalism and glossy vinyl lips.',u:'https://www.nwcollege.edu/blog/2025-beauty-trends-making-a-comeback/'},
+        {p:'Vogue Scandinavia',dt:'2025',t:'7 Makeup Trends That Defined 2025',d:'Metallics, bare-eye looks, matte complexions and berry lips.',u:'https://www.voguescandinavia.com/articles/must-try-makeup-trends-of-2025'},
+        {p:'Vogue',dt:'Daily',t:'Vogue Fashion News Hub',d:'Runway coverage, designer profiles and trend reports.',u:'https://www.vogue.com/fashion'},
+        {p:'Harper’s Bazaar',dt:'Daily',t:'Fashion Hub',d:'Runway reviews, style guides and celebrity fashion edits.',u:'https://www.harpersbazaar.com/fashion/'},
+        {p:'Byrdie',dt:'Daily',t:'Beauty Blog Hub',d:'Skincare, makeup, hair and wellness with derm-reviewed content.',u:'https://www.byrdie.com/'},
+        {p:'Allure',dt:'’25–’26',t:'Beauty Blog Hub',d:'Expert-reviewed skincare, tutorials and trend forecasting.',u:'https://www.allure.com/'}
+      ]},
+      crypto: { label:'Cryptocurrency', items:[
+        {p:'CoinDesk',dt:'2025',t:'State of the Blockchain 2025 — Annual Report',d:'Ethereum TVL growth, on-chain app revenue and Solana ETFs.',u:'https://www.coindesk.com/research/state-of-the-blockchain-2025'},
+        {p:'CoinDesk',dt:'Daily',t:'CoinDesk News Hub',d:'Bitcoin moves, Ethereum treasury, MiCA and Fed rate impact.',u:'https://www.coindesk.com/'},
+        {p:'CoinDesk',dt:'2024',t:'Crypto 2024: The Year Ahead Outlook',d:'Stablecoins, tokenized treasuries and DeFi in climate finance.',u:'https://coindesk.com/consensus-magazine/crypto-2024'},
+        {p:'Cointelegraph',dt:'Jan 2025',t:'Top Crypto Investments in 2025',d:'Bitcoin as a hedge, AI protocols and real-world asset tokenization.',u:'https://cointelegraph.com/news/crypto-investments-2025-bitcoin-ai-rwa'},
+        {p:'Cointelegraph',dt:'Jan 2025',t:'Crypto Industry Report 2025',d:'ETF-fueled Bitcoin rise and altcoins past $1.5 trillion.',u:'https://cointelegraph.com/research/crypto-industry-report-2025-key-trends-insights-and-growth-opportunities'},
+        {p:'Cointelegraph',dt:'Dec 2024',t:'What’s Next for DeFi in 2025?',d:'Bitcoin staking, RWA tokenization and agentic AI as TVL crests $130B.',u:'https://cointelegraph.com/news/whats-next-defi-2025'},
+        {p:'Cointelegraph',dt:'Jan 2025',t:'Will 2025 Become the Year of Bitcoin DeFi?',d:'$100B into spot ETFs, BTC past $100K and Bitcoin L2s.',u:'https://cointelegraph.com/news/2025-year-bitcoin-de-fi'},
+        {p:'Cointelegraph',dt:'Oct 2024',t:'5 DeFi Predictions for 2025',d:'Institutional DeFi, tokenized RWAs and BTC derivatives.',u:'https://cointelegraph.com/news/five-defi-predictions-for-2025'},
+        {p:'Cointelegraph',dt:'2025',t:'Top Crypto Narratives Shaping 2025',d:'AI agents, institutional RWA adoption and memecoin volatility.',u:'https://cointelegraph.com/learn/articles/top-crypto-narratives'},
+        {p:'Bankless',dt:'Dec 2024',t:'5 NFT Predictions for 2025',d:'NFTs’ most active year and L2, account abstraction and gaming.',u:'https://www.bankless.com/read/5-nft-predictions-2025'},
+        {p:'Decrypt',dt:'Daily',t:'Crypto News Hub',d:'Crypto, NFT, AI and Web3 daily market analysis and culture.',u:'https://decrypt.co/'},
+        {p:'Cointelegraph',dt:'Daily',t:'Cointelegraph News Hub',d:'Daily Ethereum analysis, protocol updates and stablecoin policy.',u:'https://cointelegraph.com/'},
+        {p:'Binance',dt:'’24–’26',t:'Binance Blog',d:'Trading guides, product launches, education and market insights.',u:'https://www.binance.com/en/blog'},
+        {p:'Coinbase',dt:'’24–’26',t:'Coinbase Learn Blog',d:'Educational content on Bitcoin, Ethereum, DeFi and wallets.',u:'https://www.coinbase.com/learn'},
+        {p:'Messari',dt:'’24–’26',t:'Crypto Research Hub',d:'Institutional-grade protocol analysis and annual reports.',u:'https://messari.io/research'},
+        {p:'The Block',dt:'Daily',t:'Research & News',d:'Institutional adoption, blockchain data and VC flows.',u:'https://www.theblock.co/'},
+        {p:'Galaxy Digital',dt:'’24–’26',t:'Research Blog',d:'Bitcoin macro thesis, DeFi, mining and market structure.',u:'https://www.galaxy.com/insights/'},
+        {p:'CryptoSlate',dt:'Daily',t:'News & Data Hub',d:'Altcoins, DeFi, exchange news and on-chain data.',u:'https://cryptoslate.com/'},
+        {p:'BeInCrypto',dt:'’24–’26',t:'Learn Blog',d:'Beginner guides to buying Bitcoin, DeFi and altcoins.',u:'https://beincrypto.com/learn/'},
+        {p:'Unchained',dt:'’24–’26',t:'Unchained Podcast Blog',d:'Founder interviews and analysis on DeFi, regulation and Web3.',u:'https://unchainedcrypto.com/blog/'}
+      ]},
+      dating: { label:'Relationships & Dating', items:[
+        {p:'Psychology Today',dt:'Oct 2024',t:'5 Dating Trends for 2025',d:'“Smutten”, freak matching and grim-keeping from 5,274 daters.',u:'https://www.psychologytoday.com/gb/blog/a-funny-bone-to-pick/202410/5-dating-trends-for-2025'},
+        {p:'Psychology Today',dt:'Nov 2025',t:'The Relationship Advice You May Not Want to Hear',d:'A 2024 study challenging the love-languages “match” belief.',u:'https://www.psychologytoday.com/us/blog/fulfillment-at-any-age/202511/the-relationship-advice-you-probably-dont-want-to-hear'},
+        {p:'Psychology Today',dt:'Feb 2024',t:'10 Essential Pieces of Expert Dating Advice',d:'Dating with clarity, managing expectations and early signals.',u:'https://www.psychologytoday.com/us/blog/the-psychology-of-relationships/202402/10-quick-pieces-of-dating-advice-from-relationship'},
+        {p:'Psychology Today',dt:'Dec 2025',t:'Dating Without Drama: Trends Support Mental Health',d:'How intentional, slow dating reduces stress and improves well-being.',u:'https://www.psychologytoday.com/us/blog/lifetime-connections/202512/dating-without-drama-modern-trends-support-mental-health'},
+        {p:'Psychology Today',dt:'Sep 2025',t:'Dating Made Easy: Knowing What You Want',d:'“Relationship clarity” predicts lower loneliness and satisfaction.',u:'https://www.psychologytoday.com/us/blog/the-psychology-of-relationships/202509/dating-made-easy-the-power-of-knowing-what-you-want'},
+        {p:'Psychology Today',dt:'May 2025',t:'The New Rules of Dating',d:'The paradox of wanting companionship but resisting commitment.',u:'https://www.psychologytoday.com/us/articles/202505/the-new-rules-of-dating'},
+        {p:'Psychology Today',dt:'’24–’26',t:'The Psychology of Relationships Hub',d:'Research-backed dating trends, attraction and ghosting psychology.',u:'https://www.psychologytoday.com/us/blog/the-psychology-relationships'},
+        {p:'Psychology Today',dt:'’24–’26',t:'Modern Dating Hub',d:'Recognizing warning signs and building healthier patterns.',u:'https://www.psychologytoday.com/us/blog/modern-dating'},
+        {p:'Hinge',dt:'Feb 2024',t:'Hinge’s 2024 Gen Z D.A.T.E. Report',d:'56% say fear of rejection stops them; “Cringe Mode” antidote.',u:'https://hinge.co/newsroom/2024-GenZ-Report'},
+        {p:'Hinge',dt:'Nov 2025',t:'2025 Gen Z D.A.T.E. Report',d:'84% want deeper intimacy; thoughtful questions win second dates.',u:'https://hinge.co/newsroom/2025-GenZ-Report'},
+        {p:'Hinge',dt:'2025',t:'Dating Forward: Quality-First Approach',d:'Three days of chatting as the sweet spot before asking out.',u:'https://hinge.co/en-gb/newsroom/dating-forward'},
+        {p:'The Knot',dt:'Jan 2025',t:'‘Hold Space’ for These 2025 Dating Trends',d:'Intentional dating, the 2-2-2 rule and slow dating.',u:'https://www.theknot.com/content/dating-trends'},
+        {p:'Gottman',dt:'Jul 2025',t:'What to Look for in a Long-Term Partner',d:'12 must-have qualities that predict lasting partnerships.',u:'https://www.gottman.com/blog/what-to-look-for-in-a-long-term-partner/'},
+        {p:'Gottman',dt:'Apr 2026',t:'How to Have a Healthy Relationship: 12 Steps',d:'Boundaries, finances, conflict resolution and intimacy.',u:'https://www.gottman.com/blog/how-to-prepare-yourself-for-a-healthy-relationship/'},
+        {p:'Gottman',dt:'’24–’26',t:'Gottman Relationship Blog Hub',d:'Research-backed communication and emotional connection.',u:'https://www.gottman.com/blog/'},
+        {p:'Gottman',dt:'’24–’26',t:'Dating & Premarital Archive',d:'Building stable relationships from early dating to engagement.',u:'https://www.gottman.com/blog/category/dating-premarital/'},
+        {p:'Bustle',dt:'Aug 2024',t:'Jillian Turecki’s Advice Cuts Through the Noise',d:'The viral coach whose “it begins with you” message went viral.',u:'https://www.bustle.com/life/jillian-turecki-dating-influencers-relationship-advice'},
+        {p:'eHarmony',dt:'’24–’26',t:'Relationship Advice Blog',d:'First dates, long-distance, compatibility and communication.',u:'https://www.eharmony.com/dating-advice/'},
+        {p:'Match.com',dt:'’24–’26',t:'Dating Advice & Magazine',d:'Modern dating trends, conversation starters and milestones.',u:'https://www.match.com/magazine/'},
+        {p:'mindbodygreen',dt:'’24–’26',t:'Relationships Hub',d:'Attachment styles, communication and emotional intimacy.',u:'https://www.mindbodygreen.com/relationships'}
+      ]}
+    };
+  }
+  renderVals(){
+    const data = this.data();
+    const order = ['fitness','health','automotive','realestate','fashion','crypto','dating'];
+    const active = this.state.active;
+    const self = this;
+    const tabs = order.map(function(key){
+      return {
+        label: data[key].label,
+        count: data[key].items.length,
+        key: key,
+        onClick: function(){ self.setState({ active: key }); }
+      };
+    });
+    return {
+      tabs: tabs,
+      items: data[active].items,
+      activeLabel: data[active].label,
+      activeCount: data[active].items.length
+    };
+  }
+}
+</script>
+</body>
+</html>

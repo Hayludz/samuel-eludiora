@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  @keyframes seFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  @keyframes seFloat2{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
+  @keyframes seMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @keyframes sePulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.25)}}
+  @keyframes seBlink{0%,100%{opacity:1}50%{opacity:.2}}
+  #seHome.js-ready [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+  #seHome.js-ready [data-reveal].seIn{opacity:1;transform:none;}
+  .seMarqueeTrack{animation:seMarquee 32s linear infinite;}
+  @media (prefers-reduced-motion:reduce){.seMarqueeTrack{animation:none;}}
+</style>
+</helmet>
+<div id="seHome" style="position:relative; background:#F3EDE2; color:#1B1714; font-family:Archivo,sans-serif; overflow-x:hidden;">
+  <dc-import name="Nav" active="home" hint-size="100%,80px"></dc-import>
+
+  <!-- HERO (dark, generative) -->
+  <section style="position:relative; background:#16120F; color:#F3EDE2; overflow:hidden;">
+    <canvas id="seHeroCanvas" style="position:absolute; inset:0; width:100%; height:100%; display:block; opacity:0.9;"></canvas>
+    <div style="position:absolute; inset:0; background:radial-gradient(120% 90% at 80% 10%, rgba(189,84,31,0.22), transparent 55%), radial-gradient(90% 70% at 0% 100%, rgba(232,178,122,0.14), transparent 55%); pointer-events:none;"></div>
+    <div style="position:relative; z-index:2; max-width:1280px; margin:0 auto; padding:clamp(48px,7vw,104px) clamp(20px,5vw,64px) clamp(56px,8vw,110px); display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:clamp(36px,5vw,72px); align-items:center;">
+      <div style="min-width:0;">
+        <div data-reveal style="display:inline-flex; align-items:center; gap:9px; padding:7px 15px; border:1px solid rgba(243,237,226,0.22); border-radius:100px; margin-bottom:28px;">
+          <span style="width:7px; height:7px; border-radius:50%; background:#E8B27A; animation:sePulse 2.4s ease-in-out infinite;"></span>
+          <span style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#E8D9C4;">Blog content that builds authority</span>
+        </div>
+        <h1 data-reveal style="margin:0 0 26px; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(40px,6.6vw,82px); line-height:1.0; letter-spacing:-1.2px;">Consistent blog posts that <em style="font-style:italic; color:#E8B27A;">seal your authority</em> — and turn readers into leads, <span style="position:relative; white-space:nowrap;">every month<span style="position:absolute; left:0; right:0; bottom:2px; height:3px; background:#BD541F; border-radius:3px;"></span></span>.</h1>
+        <p data-reveal style="margin:0 0 32px; max-width:560px; font-size:clamp(16px,1.6vw,19px); line-height:1.7; color:rgba(243,237,226,0.78);">Blogs are the most powerful tool most experts ignore. What Google knows about you comes largely from what you publish — so you have to keep telling it who you are. I’ve done exactly that across <strong style="color:#F3EDE2;">fitness, health, real estate, automotive, fashion, crypto</strong> and more — growing audiences and revenue. Me and my team will make it happen for you.</p>
+        <div data-reveal style="display:flex; flex-wrap:wrap; gap:14px;">
+          <a href="Services.dc.html" style="text-decoration:none; font-size:15px; font-weight:700; color:#16120F; background:#E8B27A; padding:16px 28px; border-radius:6px; transition:transform .18s ease, background .2s ease;" style-hover="background:#F3EDE2; transform:translateY(-2px)">See how it works →</a>
+          <a href="Pricing.dc.html" style="text-decoration:none; font-size:15px; font-weight:700; color:#F3EDE2; border:1px solid rgba(243,237,226,0.3); padding:16px 28px; border-radius:6px; transition:border-color .2s ease, color .2s ease;" style-hover="border-color:#E8B27A; color:#E8B27A">View pricing</a>
+        </div>
+        <div data-reveal style="display:flex; flex-wrap:wrap; gap:26px; margin-top:42px;">
+          <div><div style="font-family:'Instrument Serif',serif; font-size:34px; color:#E8B27A; line-height:1;" data-count="7" data-suffix="">7</div><div style="font-size:12.5px; color:rgba(243,237,226,0.62); line-height:1.3; margin-top:4px;">industries served</div></div>
+          <div style="width:1px; align-self:stretch; background:rgba(243,237,226,0.18);"></div>
+          <div><div style="font-family:'Instrument Serif',serif; font-size:34px; color:#E8B27A; line-height:1;" data-count="80" data-suffix="+">80+</div><div style="font-size:12.5px; color:rgba(243,237,226,0.62); line-height:1.3; margin-top:4px;">posts referenced &amp; written</div></div>
+          <div style="width:1px; align-self:stretch; background:rgba(243,237,226,0.18);"></div>
+          <div><div style="font-family:'Instrument Serif',serif; font-size:34px; color:#E8B27A; line-height:1;">Daily</div><div style="font-size:12.5px; color:rgba(243,237,226,0.62); line-height:1.3; margin-top:4px;">publishing cadence</div></div>
+        </div>
+      </div>
+      <div data-reveal style="position:relative; justify-self:center; min-width:0;">
+        <div style="position:absolute; inset:18px -18px -18px 18px; background:linear-gradient(160deg,#D98A4E,#BD541F); border-radius:10px; animation:seFloat2 7s ease-in-out infinite;"></div>
+        <div style="position:absolute; left:-16px; top:30px; z-index:4; display:flex; flex-direction:column; gap:2px; background:#F3EDE2; color:#16120F; padding:12px 16px; border-radius:8px; box-shadow:0 16px 34px rgba(0,0,0,0.4); animation:seFloat 6s ease-in-out infinite;">
+          <span style="font-size:9.5px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:#BD541F;">Google ranking</span>
+          <span style="font-size:13px; font-weight:700;">▲ Position #1</span>
+        </div>
+        <div style="position:absolute; right:-14px; bottom:36px; z-index:4; display:flex; align-items:center; gap:9px; background:#16120F; color:#F3EDE2; border:1px solid rgba(232,178,122,0.4); padding:11px 15px; border-radius:8px; box-shadow:0 16px 34px rgba(0,0,0,0.4); animation:seFloat2 6.5s ease-in-out infinite;">
+          <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#E8B27A; line-height:1;">+182%</span>
+          <span style="font-size:11px; color:rgba(243,237,226,0.7); line-height:1.25;">organic<br>traffic</span>
+        </div>
+        <div id="seHeroPhoto" role="img" aria-label="Samuel Eludiora" style="position:relative; z-index:2; width:min(420px,80vw); aspect-ratio:853/1080; border-radius:10px; overflow:hidden; background-color:#C98B4A; background-size:cover; background-position:center 16%; background-repeat:no-repeat; box-shadow:0 30px 70px rgba(0,0,0,0.5);"></div>
+      </div>
+    </div>
+    <!-- industries marquee -->
+    <div style="position:relative; z-index:2; border-top:1px solid rgba(243,237,226,0.12); padding:18px 0; overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);">
+      <div class="seMarqueeTrack" style="display:flex; gap:48px; width:max-content; white-space:nowrap;">
+        <span style="font-family:'Instrument Serif',serif; font-size:22px; color:rgba(243,237,226,0.5);">Fitness</span><span style="color:#BD541F;">✦</span>
+        <span style="font-family:'Instrument Serif',serif; font-size:22px; color:rgba(243,237,226,0.5);">Health &amp; Wellness</span><span style="color:#BD541F;">✦</span>
+        <span style="font-family:'Instrument Serif',serif; font-size:22px; color:rgba(243,237,226,0.5);">Real Estate</span><span style="color:#BD541F;">✦</span>
+        <span style="font-family:'Instrument Serif',serif; font-size:22px; color:rgba(243,237,226,0.5);">Automotive</span><span style="color:#BD541F;">✦</span>
+        <span style="font-family:'Instrument Serif',serif; font-size:22px; color:rgba(243,237,226,0.5);">Fashion &amp; Beauty</span><span style="color:#BD541F;">✦</span>
+        <span style="font-family:'Instrument Serif',serif; font-size:22px; color:rgba(243,237,226,0.5);">Cryptocurrency</span><span style="color:#BD541F;">✦</span>
+        <span style="font-family:'Instrument Serif',serif; font-size:22px; color:rgba(243,237,226,0.5);">Relationships</span><span style="color:#BD541F;">✦</span>
+        <span style="font-family:'Instrument Serif',serif; font-size:22px; color:rgba(243,237,226,0.5);">Fitness</span><span style="color:#BD541F;">✦</span>
+        <span style="font-family:'Instrument Serif',serif; font-size:22px; color:rgba(243,237,226,0.5);">Health &amp; Wellness</span><span style="color:#BD541F;">✦</span>
+        <span style="font-family:'Instrument Serif',serif; font-size:22px; color:rgba(243,237,226,0.5);">Real Estate</span><span style="color:#BD541F;">✦</span>
+        <span style="font-family:'Instrument Serif',serif; font-size:22px; color:rgba(243,237,226,0.5);">Automotive</span><span style="color:#BD541F;">✦</span>
+        <span style="font-family:'Instrument Serif',serif; font-size:22px; color:rgba(243,237,226,0.5);">Fashion &amp; Beauty</span><span style="color:#BD541F;">✦</span>
+        <span style="font-family:'Instrument Serif',serif; font-size:22px; color:rgba(243,237,226,0.5);">Cryptocurrency</span><span style="color:#BD541F;">✦</span>
+        <span style="font-family:'Instrument Serif',serif; font-size:22px; color:rgba(243,237,226,0.5);">Relationships</span><span style="color:#BD541F;">✦</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE INSIGHT: blogs are ignored -->
+  <section style="max-width:1180px; margin:0 auto; padding:clamp(64px,9vw,128px) clamp(20px,5vw,64px);">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:clamp(36px,5vw,64px); align-items:center;">
+      <div data-reveal>
+        <p style="margin:0 0 20px; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#BD541F;">The tool everyone ignores</p>
+        <h2 style="margin:0 0 22px; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(30px,4.6vw,54px); line-height:1.05; letter-spacing:-0.5px;">Google forms its opinion of you from what you publish.</h2>
+        <p style="margin:0 0 18px; font-size:17px; line-height:1.72; color:#544B41;">A reel disappears in 48 hours. A blog post works for years — quietly telling the search engine, and your market, exactly who you are and why you’re the authority. Most experts never claim that ground.</p>
+        <p style="margin:0; font-size:17px; line-height:1.72; color:#544B41;">So I claim it for them. Consistent, keyword-led posts that keep telling Google your name — until you’re the answer it returns.</p>
+      </div>
+      <div data-reveal style="position:relative;">
+        <div style="background:#16120F; color:#F3EDE2; border-radius:16px; padding:clamp(24px,3vw,36px); box-shadow:0 24px 56px rgba(27,23,20,0.2);">
+          <p style="margin:0 0 22px; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8B27A;">Where your audience decides to trust you</p>
+          <div style="display:flex; flex-direction:column; gap:18px;">
+            <div data-bar="92"><div style="display:flex; justify-content:space-between; margin-bottom:7px; font-size:13.5px;"><span style="color:rgba(243,237,226,0.82);">Search Google before buying</span><span style="font-weight:800; color:#E8B27A;">92%</span></div><div style="height:9px; background:rgba(243,237,226,0.12); border-radius:6px; overflow:hidden;"><div class="seBarFill" style="height:100%; width:92%; background:linear-gradient(90deg,#BD541F,#E8B27A); border-radius:6px; transition:width 1.1s cubic-bezier(.2,.7,.2,1);"></div></div></div>
+            <div data-bar="75"><div style="display:flex; justify-content:space-between; margin-bottom:7px; font-size:13.5px;"><span style="color:rgba(243,237,226,0.82);">Trust brands with blog content</span><span style="font-weight:800; color:#E8B27A;">75%</span></div><div style="height:9px; background:rgba(243,237,226,0.12); border-radius:6px; overflow:hidden;"><div class="seBarFill" style="height:100%; width:75%; background:linear-gradient(90deg,#BD541F,#E8B27A); border-radius:6px; transition:width 1.1s cubic-bezier(.2,.7,.2,1);"></div></div></div>
+            <div data-bar="60"><div style="display:flex; justify-content:space-between; margin-bottom:7px; font-size:13.5px;"><span style="color:rgba(243,237,226,0.82);">Read a blog before contacting</span><span style="font-weight:800; color:#E8B27A;">60%</span></div><div style="height:9px; background:rgba(243,237,226,0.12); border-radius:6px; overflow:hidden;"><div class="seBarFill" style="height:100%; width:60%; background:linear-gradient(90deg,#BD541F,#E8B27A); border-radius:6px; transition:width 1.1s cubic-bezier(.2,.7,.2,1);"></div></div></div>
+          </div>
+          <p style="margin:18px 0 0; font-size:11.5px; color:rgba(243,237,226,0.45); line-height:1.5;">Illustrative of well-documented search &amp; content-marketing behaviour.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRAMEWORK PREVIEW -->
+  <section style="background:#EBE2D2; border-top:1px solid rgba(27,23,20,0.1); border-bottom:1px solid rgba(27,23,20,0.1);">
+    <div style="max-width:1180px; margin:0 auto; padding:clamp(64px,9vw,120px) clamp(20px,5vw,64px);">
+      <div data-reveal style="display:flex; flex-wrap:wrap; gap:18px; justify-content:space-between; align-items:flex-end; margin-bottom:54px;">
+        <div>
+          <p style="margin:0 0 14px; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#BD541F;">The Thought Leadership Framework</p>
+          <h2 style="margin:0; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(30px,4.5vw,52px); line-height:1.05; max-width:640px;">One system that does the work of a writer, an SEO team and a designer.</h2>
+        </div>
+        <a href="Services.dc.html" style="text-decoration:none; font-size:14px; font-weight:700; color:#1B1714; border-bottom:2px solid #BD541F; padding-bottom:3px; white-space:nowrap;" style-hover="color:#BD541F">Explore the full Framework →</a>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:20px;">
+        <div data-reveal style="background:#F8F3E9; border:1px solid rgba(27,23,20,0.1); border-radius:12px; padding:30px;"><div style="font-family:'Instrument Serif',serif; font-size:34px; color:#BD541F; line-height:1; margin-bottom:16px;">01</div><h3 style="margin:0 0 9px; font-size:18px; font-weight:800;">Keyword Intelligence</h3><p style="margin:0; font-size:14.5px; line-height:1.6; color:#6F655A;">I find the exact questions your future clients are already typing into Google — then claim them for you.</p></div>
+        <div data-reveal style="background:#F8F3E9; border:1px solid rgba(27,23,20,0.1); border-radius:12px; padding:30px;"><div style="font-family:'Instrument Serif',serif; font-size:34px; color:#BD541F; line-height:1; margin-bottom:16px;">02</div><h3 style="margin:0 0 9px; font-size:18px; font-weight:800;">Authority Blog Posts</h3><p style="margin:0; font-size:14.5px; line-height:1.6; color:#6F655A;">Plagiarism-free, expertly-written, SEO-structured articles published under your name — every working day.</p></div>
+        <div data-reveal style="background:#F8F3E9; border:1px solid rgba(27,23,20,0.1); border-radius:12px; padding:30px;"><div style="font-family:'Instrument Serif',serif; font-size:34px; color:#BD541F; line-height:1; margin-bottom:16px;">03</div><h3 style="margin:0 0 9px; font-size:18px; font-weight:800;">Social Carousels</h3><p style="margin:0; font-size:14.5px; line-height:1.6; color:#6F655A;">Designed graphics that stop the scroll and send your audience straight to the post — built-in distribution.</p></div>
+        <div data-reveal style="background:#F8F3E9; border:1px solid rgba(27,23,20,0.1); border-radius:12px; padding:30px;"><div style="font-family:'Instrument Serif',serif; font-size:34px; color:#BD541F; line-height:1; margin-bottom:16px;">04</div><h3 style="margin:0 0 9px; font-size:18px; font-weight:800;">Compounding Authority</h3><p style="margin:0; font-size:14.5px; line-height:1.6; color:#6F655A;">Each post ranks, each carousel circulates — your library grows into an asset that sells while you work.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTHORITY GROWTH INFOGRAPHIC -->
+  <section style="max-width:1180px; margin:0 auto; padding:clamp(64px,9vw,120px) clamp(20px,5vw,64px);">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:clamp(36px,5vw,64px); align-items:center;">
+      <div data-reveal>
+        <p style="margin:0 0 16px; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#BD541F;">The compounding effect</p>
+        <h2 style="margin:0 0 20px; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(28px,4.2vw,48px); line-height:1.07;">One post is a spark. A daily library is a wildfire.</h2>
+        <p style="margin:0 0 26px; font-size:16.5px; line-height:1.72; color:#544B41;">Sporadic content flatlines. Consistent, keyword-targeted publishing stacks — every new post lifts the ones before it, until your domain becomes the place your industry turns to.</p>
+        <div style="display:flex; gap:22px; flex-wrap:wrap;">
+          <div><div style="font-family:'Instrument Serif',serif; font-size:30px; color:#BD541F;" data-count="14000" data-suffix="">14,000</div><div style="font-size:12.5px; color:#6F655A; margin-top:3px;">monthly visitors, 6 months</div></div>
+          <div><div style="font-family:'Instrument Serif',serif; font-size:30px; color:#BD541F;" data-count="3" data-suffix="×">3×</div><div style="font-size:12.5px; color:#6F655A; margin-top:3px;">avg. return on engagement</div></div>
+        </div>
+      </div>
+      <div data-reveal style="background:#FBF7EE; border:1px solid rgba(27,23,20,0.12); border-radius:16px; padding:clamp(24px,3vw,34px);">
+        <div style="display:flex; align-items:flex-end; gap:clamp(8px,2vw,16px); height:230px;">
+          <div data-grow style="flex:1; display:flex; flex-direction:column; align-items:center; gap:8px; height:100%; justify-content:flex-end;"><div class="seGrow" style="width:100%; height:12%; background:#E7D3B5; border-radius:6px 6px 0 0; transition:height 1s cubic-bezier(.2,.7,.2,1);"></div><span style="font-size:11px; color:#A08B70; font-weight:600;">M1</span></div>
+          <div data-grow style="flex:1; display:flex; flex-direction:column; align-items:center; gap:8px; height:100%; justify-content:flex-end;"><div class="seGrow" style="width:100%; height:24%; background:#DCB985; border-radius:6px 6px 0 0; transition:height 1s cubic-bezier(.2,.7,.2,1) .08s;"></div><span style="font-size:11px; color:#A08B70; font-weight:600;">M2</span></div>
+          <div data-grow style="flex:1; display:flex; flex-direction:column; align-items:center; gap:8px; height:100%; justify-content:flex-end;"><div class="seGrow" style="width:100%; height:40%; background:#CF9A55; border-radius:6px 6px 0 0; transition:height 1s cubic-bezier(.2,.7,.2,1) .16s;"></div><span style="font-size:11px; color:#A08B70; font-weight:600;">M3</span></div>
+          <div data-grow style="flex:1; display:flex; flex-direction:column; align-items:center; gap:8px; height:100%; justify-content:flex-end;"><div class="seGrow" style="width:100%; height:60%; background:#C5722F; border-radius:6px 6px 0 0; transition:height 1s cubic-bezier(.2,.7,.2,1) .24s;"></div><span style="font-size:11px; color:#A08B70; font-weight:600;">M4</span></div>
+          <div data-grow style="flex:1; display:flex; flex-direction:column; align-items:center; gap:8px; height:100%; justify-content:flex-end;"><div class="seGrow" style="width:100%; height:80%; background:#BD541F; border-radius:6px 6px 0 0; transition:height 1s cubic-bezier(.2,.7,.2,1) .32s;"></div><span style="font-size:11px; color:#A08B70; font-weight:600;">M5</span></div>
+          <div data-grow style="flex:1; display:flex; flex-direction:column; align-items:center; gap:8px; height:100%; justify-content:flex-end;"><div class="seGrow" style="width:100%; height:100%; background:#A6431A; border-radius:6px 6px 0 0; transition:height 1s cubic-bezier(.2,.7,.2,1) .4s;"></div><span style="font-size:11px; color:#A08B70; font-weight:600;">M6</span></div>
+        </div>
+        <div style="margin-top:18px; padding-top:16px; border-top:1px solid rgba(27,23,20,0.12); display:flex; justify-content:space-between; align-items:center;"><span style="font-size:13px; color:#6F655A;">Monthly organic reach</span><span style="font-family:'Instrument Serif',serif; font-size:22px; color:#BD541F;">↗ compounding</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFFERENTIATOR -->
+  <section style="background:#221C17; color:#F3EDE2;">
+    <div style="max-width:1180px; margin:0 auto; padding:clamp(64px,9vw,120px) clamp(20px,5vw,64px);">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:clamp(36px,5vw,64px); align-items:center;">
+        <div data-reveal>
+          <p style="margin:0 0 16px; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#E8B27A;">Why this is different</p>
+          <h2 style="margin:0 0 22px; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(30px,4.5vw,50px); line-height:1.06;">Most people sell you words. I sell you an audience that finds them.</h2>
+          <p style="margin:0 0 18px; font-size:16.5px; line-height:1.72; color:rgba(243,237,226,0.74);">A blog post nobody can find is a diary entry. A graphic nobody clicks is decoration. The Thought Leadership Framework fuses <strong style="color:#F3EDE2;">SEO</strong> and <strong style="color:#F3EDE2;">social design</strong> so your content is discovered on search <em>and</em> shared on the feed — two roads, one destination: you, the authority.</p>
+          <a href="CaseStudies.dc.html" style="text-decoration:none; font-size:15px; font-weight:700; color:#16120F; background:#E8B27A; padding:14px 24px; border-radius:6px; display:inline-block; transition:background .2s ease;" style-hover="background:#F3EDE2">See the results in 10 case studies →</a>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <div data-reveal style="display:flex; gap:14px; align-items:flex-start; background:rgba(243,237,226,0.05); border:1px solid rgba(243,237,226,0.14); border-radius:10px; padding:20px 22px;"><span style="color:#E8B27A; font-size:20px; line-height:1.1;">✦</span><div><div style="font-weight:800; font-size:15.5px;">Found on Google</div><div style="font-size:13.5px; color:rgba(243,237,226,0.62); line-height:1.5;">Keyword-led articles that rank for what people already search.</div></div></div>
+          <div data-reveal style="display:flex; gap:14px; align-items:flex-start; background:rgba(243,237,226,0.05); border:1px solid rgba(243,237,226,0.14); border-radius:10px; padding:20px 22px;"><span style="color:#E8B27A; font-size:20px; line-height:1.1;">✦</span><div><div style="font-weight:800; font-size:15.5px;">Shared on social</div><div style="font-size:13.5px; color:rgba(243,237,226,0.62); line-height:1.5;">Carousels and graphics that drive the feed back to your blog.</div></div></div>
+          <div data-reveal style="display:flex; gap:14px; align-items:flex-start; background:rgba(243,237,226,0.05); border:1px solid rgba(243,237,226,0.14); border-radius:10px; padding:20px 22px;"><span style="color:#E8B27A; font-size:20px; line-height:1.1;">✦</span><div><div style="font-weight:800; font-size:15.5px;">Owned by you</div><div style="font-size:13.5px; color:rgba(243,237,226,0.62); line-height:1.5;">Copyright-free imagery, plagiarism-free copy — a library that’s 100% yours.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS ACROSS INDUSTRIES -->
+  <section style="max-width:1180px; margin:0 auto; padding:clamp(64px,9vw,120px) clamp(20px,5vw,64px);">
+    <div data-reveal style="text-align:center; max-width:680px; margin:0 auto 54px;">
+      <p style="margin:0 0 14px; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#BD541F;">Proven across industries</p>
+      <h2 style="margin:0; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(28px,4.4vw,50px); line-height:1.06;">The same Framework, results in every field.</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px;">
+      <div data-reveal style="background:#FBF7EE; border:1px solid rgba(27,23,20,0.1); border-radius:14px; padding:28px;"><div style="font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#A08B70; margin-bottom:14px;">Fitness</div><div style="font-family:'Instrument Serif',serif; font-size:42px; color:#BD541F; line-height:0.9;" data-count="14000" data-prefix="0→" data-suffix="">0→14k</div><p style="margin:12px 0 0; font-size:13.5px; color:#6F655A; line-height:1.55;">monthly organic visitors from a standing start.</p></div>
+      <div data-reveal style="background:#FBF7EE; border:1px solid rgba(27,23,20,0.1); border-radius:14px; padding:28px;"><div style="font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#A08B70; margin-bottom:14px;">Real Estate</div><div style="font-family:'Instrument Serif',serif; font-size:42px; color:#BD541F; line-height:0.9;">#1</div><p style="margin:12px 0 0; font-size:13.5px; color:#6F655A; line-height:1.55;">local ranking for high-intent buyer keywords.</p></div>
+      <div data-reveal style="background:#FBF7EE; border:1px solid rgba(27,23,20,0.1); border-radius:14px; padding:28px;"><div style="font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#A08B70; margin-bottom:14px;">Health &amp; Wellness</div><div style="font-family:'Instrument Serif',serif; font-size:42px; color:#BD541F; line-height:0.9;" data-count="3" data-suffix="×">3×</div><p style="margin:12px 0 0; font-size:13.5px; color:#6F655A; line-height:1.55;">inbound enquiries within two quarters.</p></div>
+      <div data-reveal style="background:#FBF7EE; border:1px solid rgba(27,23,20,0.1); border-radius:14px; padding:28px;"><div style="font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#A08B70; margin-bottom:14px;">Crypto &amp; Finance</div><div style="font-family:'Instrument Serif',serif; font-size:42px; color:#BD541F; line-height:0.9;" data-count="6" data-suffix="">6</div><p style="margin:12px 0 0; font-size:13.5px; color:#6F655A; line-height:1.55;">featured snippets owned in a crowded niche.</p></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#16120F; color:#F3EDE2;">
+    <div data-reveal style="max-width:880px; margin:0 auto; padding:clamp(64px,9vw,120px) clamp(20px,5vw,64px); text-align:center;">
+      <p style="margin:0 0 16px; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#E8B27A;">Your authority starts now</p>
+      <h2 style="margin:0 0 22px; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(32px,5vw,60px); line-height:1.04;">Let’s make you the name your field <em style="font-style:italic; color:#E8B27A;">searches for.</em></h2>
+      <p style="margin:0 auto 32px; max-width:540px; font-size:16.5px; line-height:1.7; color:rgba(243,237,226,0.72);">Tell me your niche and your goal. Me and my team will start building the library that builds your authority.</p>
+      <a href="https://wa.me/2347055308597?text=Hello%20Samuel%2C%20I'd%20like%20you%20to%20write%20and%20optimize%20my%20blogs." target="_blank" rel="noopener" style="text-decoration:none; font-size:15px; font-weight:700; color:#16120F; background:#E8B27A; padding:16px 32px; border-radius:6px; transition:transform .18s ease, background .2s ease;" style-hover="background:#F3EDE2; transform:translateY(-2px)">Start a conversation →</a>
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount(){
+    this._raf = null;
+    this.loadPhoto();
+    this.initCanvas();
+    this.initReveal();
+  }
+  componentWillUnmount(){
+    if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._io) this._io.disconnect();
+    window.removeEventListener('resize', this._onResize);
+  }
+  async loadPhoto(){
+    try { const m = await import('./assets.js'); const el = document.getElementById('seHeroPhoto'); if (el) el.style.backgroundImage = 'url("' + m.HERO + '")'; } catch(e){ console.warn('assets load failed', e); }
+  }
+  initCanvas(){
+    const canvas = document.getElementById('seHeroCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const colors = ['rgba(189,84,31,0.55)','rgba(232,178,122,0.4)','rgba(217,138,78,0.45)','rgba(120,60,30,0.4)'];
+    let blobs = [], W=0, H=0, dpr = Math.min(window.devicePixelRatio||1, 2);
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    const resize = () => {
+      const r = canvas.getBoundingClientRect();
+      W = r.width; H = r.height;
+      canvas.width = W*dpr; canvas.height = H*dpr;
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+    };
+    this._onResize = resize; window.addEventListener('resize', resize); resize();
+    const N = 6;
+    for (let i=0;i<N;i++){
+      blobs.push({ x:Math.random()*W, y:Math.random()*H, r:120+Math.random()*180, c:colors[i%colors.length], vx:(Math.random()-0.5)*0.25, vy:(Math.random()-0.5)*0.25 });
+    }
+    const draw = () => {
+      ctx.clearRect(0,0,W,H);
+      ctx.globalCompositeOperation = 'lighter';
+      for (const b of blobs){
+        if (!reduce){ b.x += b.vx; b.y += b.vy; if (b.x< -b.r) b.x=W+b.r; if (b.x>W+b.r) b.x=-b.r; if (b.y<-b.r) b.y=H+b.r; if (b.y>H+b.r) b.y=-b.r; }
+        const g = ctx.createRadialGradient(b.x,b.y,0,b.x,b.y,b.r);
+        g.addColorStop(0,b.c); g.addColorStop(1,'rgba(0,0,0,0)');
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(b.x,b.y,b.r,0,Math.PI*2); ctx.fill();
+      }
+      ctx.globalCompositeOperation = 'source-over';
+      if (!reduce) this._raf = requestAnimationFrame(draw);
+    };
+    draw();
+  }
+  animateCount(el){
+    const target = parseFloat(el.getAttribute('data-count'));
+    if (isNaN(target)) return;
+    const prefix = el.getAttribute('data-prefix') || '';
+    const suffix = el.getAttribute('data-suffix') || '';
+    const dur = 1400, start = performance.now();
+    const fmt = (n) => target>=1000 ? Math.round(n).toLocaleString() : (Number.isInteger(target)? Math.round(n).toString() : n.toFixed(1));
+    const tick = (now) => {
+      const t = Math.min(1,(now-start)/dur);
+      const e = 1-Math.pow(1-t,3);
+      el.textContent = prefix + fmt(target*e) + suffix;
+      if (t<1) requestAnimationFrame(tick); else el.textContent = prefix + fmt(target) + suffix;
+    };
+    requestAnimationFrame(tick);
+  }
+  async initReveal(){
+    const root = document.getElementById('seHome');
+    if (!root) return;
+    const self = this;
+    const onReveal = (el) => {
+      el.querySelectorAll('[data-count]').forEach((c)=>{ if(!c._done){ c._done=true; self.animateCount(c);} });
+      el.querySelectorAll('[data-bar] .seBarFill').forEach((f)=>{ const w=f.style.width; f.style.width='0%'; requestAnimationFrame(()=>requestAnimationFrame(()=>{ f.style.width=w; })); });
+      el.querySelectorAll('[data-grow] .seGrow').forEach((g)=>{ const h=g.style.height; g.style.height='0%'; requestAnimationFrame(()=>requestAnimationFrame(()=>{ g.style.height=h; })); });
+    };
+    try { const m = await import('./reveal.js'); this._scan = m.initReveal(root, onReveal); }
+    catch(e){ root.classList.add('js-ready'); root.querySelectorAll('[data-reveal]').forEach((el)=>{ el.classList.add('seIn'); onReveal(el); }); }
+  }
+  renderVals(){ return {}; }
+}
+</script>
+</body>
+</html>

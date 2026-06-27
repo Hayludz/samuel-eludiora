@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;} html,body{margin:0;padding:0;}
+  @keyframes sePulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
+  @keyframes seFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  #seCases.js-ready [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+  #seCases.js-ready [data-reveal].seIn{opacity:1;transform:none;}
+  .seLinePath{stroke-dasharray:1; stroke-dashoffset:0;}
+  @keyframes seRing{0%{transform:scale(.55);opacity:.85}100%{transform:scale(2.6);opacity:0}}
+  .seRing{transform-box:fill-box; transform-origin:center; animation:seRing 2.4s ease-out infinite;}
+  @media (prefers-reduced-motion:reduce){*{animation:none !important; transition:none !important;}}
+</style>
+</helmet>
+<div id="seCases" style="background:#F3EDE2; color:#1B1714; font-family:Archivo,sans-serif; overflow-x:hidden;">
+  <svg width="0" height="0" style="position:absolute;"><defs><linearGradient id="seAreaGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#BD541F"/><stop offset="1" stop-color="#BD541F" stop-opacity="0"/></linearGradient></defs></svg>
+  <dc-import name="Nav" active="cases" hint-size="100%,80px"></dc-import>
+
+  <!-- HERO -->
+  <section style="position:relative; background:#16120F; color:#F3EDE2; overflow:hidden;">
+    <div style="position:absolute; inset:0; background:radial-gradient(110% 90% at 85% 0%, rgba(189,84,31,0.24), transparent 55%); pointer-events:none;"></div>
+    <div style="position:absolute; top:18%; right:8%; width:60px; height:60px; border:1.5px solid rgba(232,178,122,0.4); border-radius:50%; animation:seFloat 7s ease-in-out infinite;"></div>
+    <div style="position:relative; z-index:2; max-width:1080px; margin:0 auto; padding:clamp(44px,6vw,92px) clamp(20px,5vw,64px) clamp(40px,5vw,64px);">
+      <p data-reveal style="margin:0 0 22px; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#E8B27A;">Case studies</p>
+      <h1 data-reveal style="margin:0 0 24px; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(40px,6vw,72px); line-height:1.03; letter-spacing:-1px; max-width:880px;">Ten experts who stopped being their industry’s best-kept secret.</h1>
+      <p data-reveal style="margin:0; max-width:720px; font-size:clamp(16px,1.6vw,19px); line-height:1.66; color:rgba(243,237,226,0.78);">Practical, illustrative breakdowns of the exact playbook me and my team run — the specific keywords we targeted, the steps we took, and the numbers that followed. Different niches, one repeatable pattern: targeted content, published relentlessly, until the audience arrives on its own and revenue follows.</p>
+    </div>
+  </section>
+
+  <!-- METHOD NOTE -->
+  <section style="max-width:1180px; margin:0 auto; padding:clamp(28px,4vw,48px) clamp(20px,5vw,64px) clamp(8px,2vw,16px);">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1px; background:rgba(27,23,20,0.12); border:1px solid rgba(27,23,20,0.12); border-radius:12px; overflow:hidden;">
+      <div style="background:#221C17; color:#F3EDE2; padding:24px 26px;"><div style="font-family:'Instrument Serif',serif; font-size:30px; color:#E8B27A;">10</div><p style="margin:8px 0 0; font-size:13.5px; color:rgba(243,237,226,0.7); line-height:1.5;">expert journeys, every industry</p></div>
+      <div style="background:#FBF7EE; padding:24px 26px;"><div style="font-family:'Instrument Serif',serif; font-size:30px; color:#BD541F;">1</div><p style="margin:8px 0 0; font-size:13.5px; color:#6F655A; line-height:1.5;">repeatable Framework</p></div>
+      <div style="background:#FBF7EE; padding:24px 26px;"><div style="font-family:'Instrument Serif',serif; font-size:30px; color:#BD541F;">Daily</div><p style="margin:8px 0 0; font-size:13.5px; color:#6F655A; line-height:1.5;">publishing cadence</p></div>
+      <div style="background:#FBF7EE; padding:24px 26px;"><div style="font-family:'Instrument Serif',serif; font-size:30px; color:#BD541F;">100%</div><p style="margin:8px 0 0; font-size:13.5px; color:#6F655A; line-height:1.5;">original &amp; SEO-built</p></div>
+    </div>
+  </section>
+
+  <!-- CASES -->
+  <section style="max-width:1180px; margin:0 auto; padding:clamp(24px,4vw,48px) clamp(20px,5vw,64px) clamp(40px,6vw,72px); display:flex; flex-direction:column; gap:clamp(28px,4vw,44px);">
+    <sc-for list="{{ cases }}" as="c" hint-placeholder-count="6">
+      <article data-reveal style="background:#FBF7EE; border:1px solid rgba(27,23,20,0.1); border-radius:18px; padding:clamp(24px,3.5vw,46px); box-shadow:0 1px 0 rgba(27,23,20,0.04);">
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-bottom:20px;">
+          <span style="font-family:'Instrument Serif',serif; font-size:clamp(34px,4vw,48px); color:#BD541F; line-height:0.9;">{{ c.n }}</span>
+          <div style="display:flex; flex-direction:column; gap:6px;">
+            <span style="font-size:11px; font-weight:700; letter-spacing:1.5px; line-height:1.5; text-transform:uppercase; color:#A08B70;">{{ c.niche }} · {{ c.tag }}</span>
+            <span style="font-size:18px; font-weight:800;">{{ c.name }}</span>
+          </div>
+        </div>
+        <h2 style="margin:0 0 26px; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(23px,3.1vw,36px); line-height:1.12; max-width:920px;">{{ c.headline }}</h2>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(28px,4vw,52px); align-items:start;">
+          <div style="min-width:0;">
+            <p style="margin:0 0 8px; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#BD541F;">The challenge</p>
+            <p style="margin:0 0 22px; font-size:15.5px; line-height:1.72; color:#544B41;">{{ c.challenge }}</p>
+            <p style="margin:0 0 11px; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#BD541F;">Keywords we targeted</p>
+            <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px;">
+              <sc-for list="{{ c.keywords }}" as="kw" hint-placeholder-count="3">
+                <span style="font-size:12.5px; font-weight:600; color:#3A332C; background:#EFE6D6; border:1px solid rgba(27,23,20,0.1); padding:6px 12px; border-radius:100px;">“{{ kw }}”</span>
+              </sc-for>
+            </div>
+            <p style="margin:0 0 14px; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#BD541F;">What we did — step by step</p>
+            <div style="display:flex; flex-direction:column; gap:14px;">
+              <sc-for list="{{ c.steps }}" as="s" hint-placeholder-count="3">
+                <div style="display:flex; gap:13px; align-items:flex-start;">
+                  <span style="flex-shrink:0; width:25px; height:25px; border-radius:50%; background:#BD541F; color:#F3EDE2; font-size:12px; font-weight:800; display:flex; align-items:center; justify-content:center;">{{ s.n }}</span>
+                  <div><div style="font-size:15px; font-weight:800; line-height:1.35; margin-bottom:2px;">{{ s.t }}</div><div style="font-size:14px; line-height:1.6; color:#6F655A;">{{ s.d }}</div></div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="min-width:0; background:#16120F; color:#F3EDE2; border-radius:16px; padding:clamp(22px,2.6vw,30px);">
+            <p style="margin:0 0 18px; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8B27A;">{{ c.chartLabel }}</p>
+            <div style="position:relative; margin-bottom:8px;">
+              <svg viewBox="0 0 320 150" preserveAspectRatio="none" style="width:100%; height:150px; display:block; overflow:visible;">
+                <path d="{{ c.area }}" fill="url(#seAreaGrad)" opacity="0.16"></path>
+                <path class="seLinePath" d="{{ c.line }}" fill="none" stroke="#E8B27A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+                <circle class="seRing" cx="{{ c.dotx }}" cy="{{ c.doty }}" r="5" fill="none" stroke="#E8B27A" stroke-width="1.5"></circle>
+                <circle cx="{{ c.dotx }}" cy="{{ c.doty }}" r="4.5" fill="#E8B27A"></circle>
+              </svg>
+              <div style="display:flex; justify-content:space-between; margin-top:6px; padding:0 2px;">
+                <span style="font-size:10px; color:rgba(243,237,226,0.4); font-weight:600;">Month 1</span>
+                <span style="font-size:10px; color:rgba(243,237,226,0.4); font-weight:600;">Month 6</span>
+              </div>
+            </div>
+            <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:22px 0 0;">
+              <sc-for list="{{ c.metrics }}" as="m" hint-placeholder-count="3">
+                <div>
+                  <div style="font-family:'Instrument Serif',serif; font-size:clamp(24px,3vw,32px); color:#E8B27A; line-height:1;">{{ m.display }}</div>
+                  <div style="margin-top:6px; font-size:11px; line-height:1.4; color:rgba(243,237,226,0.6);">{{ m.label }}</div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="margin-top:22px; padding-top:16px; border-top:1px solid rgba(243,237,226,0.16); display:flex; gap:10px; align-items:flex-start;">
+              <span style="color:#5FB98C; font-size:16px; line-height:1.3;">↗</span>
+              <span style="font-size:13.5px; line-height:1.55; color:rgba(243,237,226,0.86);"><strong style="color:#F3EDE2;">{{ c.result }}</strong></span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </sc-for>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#221C17; color:#F3EDE2;">
+    <div data-reveal style="max-width:900px; margin:0 auto; padding:clamp(56px,8vw,100px) clamp(20px,5vw,64px); text-align:center;">
+      <p style="margin:0 0 16px; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#E8B27A;">Your story is next</p>
+      <h2 style="margin:0 0 18px; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(30px,4.5vw,52px); line-height:1.06;">Every one of these started with one decision to publish.</h2>
+      <p style="margin:0 auto 30px; max-width:560px; font-size:16.5px; line-height:1.7; color:rgba(243,237,226,0.72);">Pick a package and me and my team will start building the library that builds your authority.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center;">
+        <a href="Pricing.dc.html" style="text-decoration:none; font-size:15px; font-weight:700; color:#16120F; background:#E8B27A; padding:15px 30px; border-radius:6px; transition:background .2s ease;" style-hover="background:#F3EDE2">View packages →</a>
+        <a href="Contact.dc.html" style="text-decoration:none; font-size:15px; font-weight:700; color:#F3EDE2; border:1px solid rgba(243,237,226,0.3); padding:15px 30px; border-radius:6px; transition:border-color .2s ease;" style-hover="border-color:#E8B27A">Talk to me first</a>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  async componentDidMount(){
+    const root = document.getElementById('seCases');
+    try { const m = await import('./reveal.js'); m.initReveal(root); }
+    catch(e){ if(root){ root.classList.add('js-ready'); root.querySelectorAll('[data-reveal]').forEach((el)=>el.classList.add('seIn')); } }
+  }
+  chart(pts){
+    const W=320,H=150,pad=14;
+    const max=Math.max.apply(null,pts)||100, min=Math.min.apply(null,pts);
+    const xs=(i)=> (i*(W/(pts.length-1)));
+    const ys=(v)=> H-pad - ((v-min)/((max-min)||1))*(H-pad*2);
+    let line='M'+xs(0).toFixed(1)+','+ys(pts[0]).toFixed(1);
+    for(let i=1;i<pts.length;i++){ line+=' L'+xs(i).toFixed(1)+','+ys(pts[i]).toFixed(1); }
+    const area=line+' L'+W+','+H+' L0,'+H+' Z';
+    return { line:line, area:area, dotx:xs(pts.length-1).toFixed(1), doty:ys(pts[pts.length-1]).toFixed(1) };
+  }
+  renderVals(){
+    const self = this;
+    const raw = [
+      { n:'01', niche:'Strength & Conditioning', tag:'90-day engagement', name:'The Barbell Method',
+        headline:'From an empty blog to the first result for “beginner strength program”.',
+        challenge:'A 12-year strength coach with zero digital footprint. Anyone searching how to start lifting found big-box gyms and thin listicles — never him. Every booking came from gym-floor referrals, so growth was capped by his postcode.',
+        keywords:['beginner barbell program','how to deadlift safely','strength training over 40'],
+        steps:[
+          {t:'Mapped 40 buyer-intent keywords',d:'Pulled the exact phrases his ideal clients search weekly, filtered for high intent and winnable competition.'},
+          {t:'Published a cornerstone guide for each',d:'1,800-word articles structured for featured snippets — schema markup, clear H2s, internal links and a booking CTA.'},
+          {t:'Turned every post into a carousel',d:'A 7-slide Instagram carousel per article funnelled his existing followers straight to the blog.'},
+          {t:'Automated the cadence in n8n',d:'A workflow scheduled, published and cross-posted daily so nothing relied on him remembering to.'}
+        ],
+        chartLabel:'Monthly organic visitors', pts:[600,1400,2600,4500,6800,14000],
+        metrics:[{display:'0→14k',count:14000,prefix:'0→',suffix:'',label:'monthly organic visitors'},{display:'#1',label:'for his core keyword'},{display:'22',count:22,suffix:'',label:'page-one keywords'}],
+        result:'His cornerstone guide now books 3–5 discovery calls a week — entirely inbound.' },
+      { n:'02', niche:'Women’s Fat Loss', tag:'6-month engagement', name:'Lean With Lola',
+        headline:'Replacing two hours of daily cold DMs with an inbound waitlist.',
+        challenge:'Lola spent two hours a day sliding into DMs for a handful of replies. Growth was capped by her own time, and every lead was a stranger who didn’t trust her yet.',
+        keywords:['sustainable fat loss for women','how to stop binge eating','realistic meal prep'],
+        steps:[
+          {t:'Built one tight content cluster',d:'Twenty interlinked posts around “sustainable fat loss for busy women”, all pointing to one pillar page.'},
+          {t:'Wrote myth-busting articles',d:'Each piece pre-sold her philosophy and answered the objection before the first call ever happened.'},
+          {t:'Designed repost-worthy carousels',d:'On-brand graphics her existing audience actually shared, compounding reach for free.'}
+        ],
+        chartLabel:'Inbound leads per month', pts:[8,16,30,48,72,96],
+        metrics:[{display:'3.4×',count:3.4,suffix:'×',label:'return on engagement'},{display:'+186%',count:186,prefix:'+',suffix:'%',label:'newsletter sign-ups'},{display:'0',count:0,label:'cold DMs sent'}],
+        result:'Cold outreach was retired entirely — her calendar now fills from search and shares alone.' },
+      { n:'03', niche:'Online Nutrition', tag:'4-month engagement', name:'Fuelled by Femi',
+        headline:'Becoming the literal answer box for “what to eat before a workout”.',
+        challenge:'Femi knew the science cold but his Instagram tips vanished in 24 hours. Nothing accumulated; every day his reach restarted from zero.',
+        keywords:['what to eat before a workout','high protein breakfast ideas','pre workout meal timing'],
+        steps:[
+          {t:'Targeted evergreen nutrition questions',d:'Chose queries with year-round search volume so the work kept paying off long after publishing.'},
+          {t:'Out-wrote thin competitor content',d:'Clinically accurate, genuinely useful guides that Google rewarded with snippet placements.'},
+          {t:'Built a recognisable carousel series',d:'A repeating visual template turned scattered tips into a branded, bingeable library.'}
+        ],
+        chartLabel:'Search impressions', pts:[1200,3000,7000,14000,23000,31000],
+        metrics:[{display:'31k',count:31000,label:'monthly readers'},{display:'9',count:9,label:'snippets owned'},{display:'2.1×',count:2.1,suffix:'×',label:'client enquiries'}],
+        result:'Three guides now sit in Google’s answer box — credibility no ad budget can buy.' },
+      { n:'04', niche:'Physiotherapy', tag:'5-month engagement', name:'Move Well Physio',
+        headline:'Owning the searches patients make at 2am with a sore back.',
+        challenge:'A skilled physio clinic invisible online. Patients in pain searched their symptoms and found WebMD and fear-mongering forums — never a local expert who could actually help.',
+        keywords:['lower back pain exercises','is it safe to run with knee pain','desk posture fixes'],
+        steps:[
+          {t:'Researched symptom-led queries',d:'Mapped the precise, worried phrasing real patients type — long-tail and high intent.'},
+          {t:'Wrote reassuring, safe-to-act guides',d:'Evidence-based articles that calmed fears and ended with a clear “book an assessment” path.'},
+          {t:'Added local SEO signals',d:'Location pages, schema and Google Business integration so the clinic ranked in its own city.'}
+        ],
+        chartLabel:'Appointment requests', pts:[10,18,33,52,74,92],
+        metrics:[{display:'18k',count:18000,label:'monthly visitors'},{display:'+92%',count:92,prefix:'+',suffix:'%',label:'online bookings'},{display:'#1',label:'for two city terms'}],
+        result:'The clinic’s back-pain guide became its single biggest source of new patients.' },
+      { n:'05', niche:'Postpartum Fitness', tag:'6-month engagement', name:'Restore Strong',
+        headline:'Turning a sensitive, high-trust niche into genuine authority.',
+        challenge:'New mothers needed reassurance, not hype. Restore Strong’s content felt clinical, and search results were dominated by fear-driven, low-quality articles.',
+        keywords:['safe postpartum exercise','diastasis recti workout','returning to running after birth'],
+        steps:[
+          {t:'Wrote empathetic, medically-sound guides',d:'Each one answered a specific worry with warmth and clinical accuracy.'},
+          {t:'Optimised for 2am questions',d:'Targeted the exact phrases anxious new mothers search when they can’t sleep.'},
+          {t:'Designed calm, trustworthy carousels',d:'Visuals that mirrored the brand’s reassuring voice and earned quiet, loyal shares.'}
+        ],
+        chartLabel:'Engaged readers', pts:[9,19,34,53,77,100],
+        metrics:[{display:'4.6×',count:4.6,suffix:'×',label:'time on page'},{display:'+92%',count:92,prefix:'+',suffix:'%',label:'consult bookings'},{display:'18k',count:18000,label:'monthly readers'}],
+        result:'Restore Strong became the gentle, credible voice mothers trust — and recommend to each other.' },
+      { n:'06', niche:'Real Estate', tag:'5-month engagement', name:'Harbour & Co. Realty',
+        headline:'Out-ranking the portals for the questions buyers actually ask.',
+        challenge:'A boutique agency drowned out by Zillow and Realtor.com. Buyers and sellers found national portals, not the local expert who knew the neighbourhood block by block.',
+        keywords:['is now a good time to buy','first-time buyer checklist','best neighbourhoods for families'],
+        steps:[
+          {t:'Targeted local + intent keywords',d:'Combined city names with buyer questions the big portals answer generically and badly.'},
+          {t:'Published hyper-local guides',d:'Neighbourhood deep-dives and step-by-step buyer guides only a true local could write.'},
+          {t:'Repurposed into market-update carousels',d:'Monthly data carousels positioned the agency as the area’s go-to market voice.'}
+        ],
+        chartLabel:'Buyer & seller enquiries', pts:[12,20,36,55,78,100],
+        metrics:[{display:'+240%',count:240,prefix:'+',suffix:'%',label:'organic traffic'},{display:'#1',label:'for “buy in [city]”'},{display:'27',count:27,label:'qualified leads/mo'}],
+        result:'The agency now captures buyers at the research stage — before a portal ever gets the click.' },
+      { n:'07', niche:'Longevity / 50+', tag:'6-month engagement', name:'Ageless Athletic',
+        headline:'Claiming the fastest-growing, least-served audience in fitness.',
+        challenge:'The over-50 market is booming and under-served, but Ageless Athletic spoke a younger language and ranked for nothing this audience searched.',
+        keywords:['strength training after 50','mobility exercises for seniors','building muscle over 60'],
+        steps:[
+          {t:'Researched how older adults search',d:'Their phrasing differs — we matched it exactly instead of guessing.'},
+          {t:'Wrote authoritative, safety-first guides',d:'Strength and mobility content that respected the audience and earned their trust.'},
+          {t:'Designed high-contrast, readable carousels',d:'Built for the habits and eyesight of an older audience, not a 22-year-old’s feed.'}
+        ],
+        chartLabel:'Audience reach', pts:[10,18,32,54,79,100],
+        metrics:[{display:'21k',count:21000,label:'monthly visitors'},{display:'#1',label:'for niche term'},{display:'+148%',count:148,prefix:'+',suffix:'%',label:'inbound leads'}],
+        result:'Ageless Athletic now owns a lucrative niche its competitors never bothered to write for.' },
+      { n:'08', niche:'CrossFit Box Owner', tag:'4-month engagement', name:'Forge CrossFit',
+        headline:'Filling a local box through national-quality content.',
+        challenge:'Forge relied on word-of-mouth and a quiet local radius. When people searched “CrossFit near me” plus their fears, a generic directory always won.',
+        keywords:['is CrossFit good for beginners','what to expect first CrossFit class','CrossFit near me'],
+        steps:[
+          {t:'Blended local SEO with helpful content',d:'Answered beginner fears while ranking for location-based searches.'},
+          {t:'Disarmed the “I’m not fit enough” fear',d:'The exact objection that stops people walking in — addressed head-on, kindly.'},
+          {t:'Ran community-proof carousels',d:'Real members, real stories — converting lurkers into trial bookings.'}
+        ],
+        chartLabel:'Trial sign-ups', pts:[14,24,41,60,82,100],
+        metrics:[{display:'+71%',count:71,prefix:'+',suffix:'%',label:'trial sign-ups'},{display:'#1',label:'local + topic terms'},{display:'12k',count:12000,label:'local impressions'}],
+        result:'Forge’s intro classes now run a waitlist — filled by people who read their way in.' },
+      { n:'09', niche:'Crypto Education', tag:'5-month engagement', name:'Plainspoken Crypto',
+        headline:'Becoming the calm, jargon-free explainer in a noisy niche.',
+        challenge:'A crypto educator buried under hype-merchants and scam-adjacent content. Beginners searching simple questions got either shilling or impenetrable jargon — never a trustworthy guide.',
+        keywords:['how to buy bitcoin safely','what is a crypto wallet','is crypto a good investment'],
+        steps:[
+          {t:'Targeted beginner safety queries',d:'High-volume, low-trust searches where a credible, plain-English answer stood out instantly.'},
+          {t:'Wrote neutral, no-hype explainers',d:'Accurate guides that built authority precisely because they didn’t sell anything.'},
+          {t:'Turned posts into explainer carousels',d:'Simple visual breakdowns that travelled across a sceptical, screenshot-happy audience.'}
+        ],
+        chartLabel:'Organic readers', pts:[8,16,30,50,73,100],
+        metrics:[{display:'27k',count:27000,label:'monthly readers'},{display:'6',count:6,label:'snippets owned'},{display:'+3×',count:3,prefix:'+',suffix:'×',label:'newsletter growth'}],
+        result:'His “buy bitcoin safely” guide became the trusted first stop for nervous beginners.' },
+      { n:'10', niche:'Youth Sports Performance', tag:'6-month engagement', name:'Apex Youth Performance',
+        headline:'Becoming the coach parents trust before they ever make contact.',
+        challenge:'Apex coached young athletes brilliantly, but parents — the real decision-makers — found nothing reassuring or authoritative when they searched online.',
+        keywords:['is weight training safe for teens','youth speed training','sports nutrition for young athletes'],
+        steps:[
+          {t:'Answered the questions parents ask',d:'Evidence-based guides addressing safety, the number-one parental concern.'},
+          {t:'Positioned Apex as the safe expert',d:'Careful, accurate content that signalled credibility to cautious parents.'},
+          {t:'Designed share-ready parent carousels',d:'Graphics that spread through local sports-parent groups and chats.'}
+        ],
+        chartLabel:'Parent enquiries', pts:[9,17,31,52,76,100],
+        metrics:[{display:'16k',count:16000,label:'monthly visitors'},{display:'#1',label:'for key parent term'},{display:'+118%',count:118,prefix:'+',suffix:'%',label:'enquiries'}],
+        result:'Parents now arrive already convinced — the content does the trust-building first.' }
+    ];
+    const cases = raw.map(function(c){
+      const ch = self.chart(c.pts);
+      const steps = c.steps.map(function(s,i){ return { n:String(i+1), t:s.t, d:s.d }; });
+      return Object.assign({}, c, { line:ch.line, area:ch.area, dotx:ch.dotx, doty:ch.doty, steps:steps });
+    });
+    return { cases: cases };
+  }
+}
+</script>
+</body>
+</html>

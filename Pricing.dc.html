@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;} html,body{margin:0;padding:0;}
+  @keyframes seFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
+  @keyframes seFloat2{0%,100%{transform:translateY(0)}50%{transform:translateY(11px)}}
+  @keyframes sePulse{0%,100%{opacity:.45;transform:scale(1)}50%{opacity:1;transform:scale(1.45)}}
+  @media (prefers-reduced-motion:reduce){*{animation:none !important;}}
+  #sePricing.js-ready [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+  #sePricing.js-ready [data-reveal].seIn{opacity:1;transform:none;}</style>
+</helmet>
+<div id="sePricing" style="background:#F3EDE2; color:#1B1714; font-family:Archivo,sans-serif; overflow-x:hidden;">
+  <dc-import name="Nav" active="pricing" hint-size="100%,80px"></dc-import>
+
+  <!-- HERO -->
+  <section style="position:relative; background:#16120F; color:#F3EDE2; overflow:hidden;">
+    <div style="position:absolute; inset:0; background:radial-gradient(120% 100% at 50% 0%, rgba(189,84,31,0.24), transparent 58%); pointer-events:none;"></div>
+    <div style="position:absolute; z-index:1; top:22%; left:9%; width:70px; height:70px; border:1.5px solid rgba(232,178,122,0.26); border-radius:50%; animation:seFloat 7s ease-in-out infinite; pointer-events:none;"></div>
+    <div style="position:absolute; z-index:1; top:28%; right:11%; width:13px; height:13px; background:#E8B27A; border-radius:50%; animation:seFloat2 5.5s ease-in-out infinite; pointer-events:none;"></div>
+    <div style="position:absolute; z-index:1; bottom:24%; left:16%; width:8px; height:8px; background:rgba(232,178,122,0.5); border-radius:50%; animation:sePulse 3.2s ease-in-out infinite; pointer-events:none;"></div>
+    <div data-reveal style="position:relative; z-index:2; max-width:1080px; margin:0 auto; padding:clamp(48px,7vw,92px) clamp(20px,5vw,64px) clamp(36px,5vw,56px); text-align:center;">
+    <p style="margin:0 0 22px; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#E8B27A;">Pricing</p>
+    <h1 style="margin:0 0 22px; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(38px,5.6vw,66px); line-height:1.04; letter-spacing:-0.8px;">Choose the pace of your <em style="font-style:italic; color:#E8B27A;">authority.</em></h1>
+    <p style="margin:0 auto; max-width:620px; font-size:clamp(16px,1.6vw,18.5px); line-height:1.66; color:rgba(243,237,226,0.78);">Every package is the full Thought Leadership Framework — keyword research, expert writing, SEO, design and distribution. The only difference is volume: how fast you want to compound.</p>
+    </div>
+  </section>
+
+  <!-- PRICING GRID -->
+  <section style="max-width:1240px; margin:0 auto; padding:clamp(20px,3vw,40px) clamp(20px,5vw,64px) clamp(40px,6vw,64px);">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(248px,1fr)); gap:18px; align-items:stretch;">
+
+      <!-- SPARK -->
+      <div style="display:flex; flex-direction:column; background:#FBF7EE; border:1px solid rgba(27,23,20,0.12); border-radius:16px; padding:30px 26px;">
+        <div style="font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#A08B70;">Spark</div>
+        <div style="display:flex; align-items:baseline; gap:4px; margin:14px 0 4px;"><span style="font-family:'Instrument Serif',serif; font-size:52px; line-height:1; color:#1B1714;">$125</span></div>
+        <p style="margin:0 0 22px; font-size:14px; line-height:1.55; color:#6F655A;">A focused start to test the waters and seed your library.</p>
+        <div style="height:1px; background:rgba(27,23,20,0.1); margin:8px 0 24px;"></div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#BD541F; font-weight:800;">6</span><span style="font-size:14px; line-height:1.45; color:#3A332C;">quality blog posts</span></div>
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#BD541F; font-weight:800;">6</span><span style="font-size:14px; line-height:1.45; color:#3A332C;">social media graphics</span></div>
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#1B8A5B;">✓</span><span style="font-size:14px; line-height:1.45; color:#3A332C;">Image generation</span></div>
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#1B8A5B;">✓</span><span style="font-size:14px; line-height:1.45; color:#3A332C;">Infographic designs</span></div>
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#1B8A5B;">✓</span><span style="font-size:14px; line-height:1.45; color:#3A332C;">Keyword research</span></div>
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#1B8A5B;">✓</span><span style="font-size:14px; line-height:1.45; color:#3A332C;">Search engine optimisation</span></div>
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#1B8A5B;">✓</span><span style="font-size:14px; line-height:1.45; color:#3A332C;">Plagiarism-free</span></div>
+        </div>
+      </div>
+
+      <!-- MOMENTUM -->
+      <div style="display:flex; flex-direction:column; background:#FBF7EE; border:1px solid rgba(27,23,20,0.12); border-radius:16px; padding:30px 26px;">
+        <div style="font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#A08B70;">Momentum</div>
+        <div style="display:flex; align-items:baseline; gap:4px; margin:14px 0 4px;"><span style="font-family:'Instrument Serif',serif; font-size:52px; line-height:1; color:#1B1714;">$250</span></div>
+        <p style="margin:0 0 22px; font-size:14px; line-height:1.55; color:#6F655A;">Enough cadence to start ranking and building real momentum.</p>
+        <div style="height:1px; background:rgba(27,23,20,0.1); margin:8px 0 24px;"></div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#BD541F; font-weight:800;">10</span><span style="font-size:14px; line-height:1.45; color:#3A332C;">quality blog posts</span></div>
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#BD541F; font-weight:800;">10</span><span style="font-size:14px; line-height:1.45; color:#3A332C;">social media graphics</span></div>
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#1B8A5B;">✓</span><span style="font-size:14px; line-height:1.45; color:#3A332C;">Image generation</span></div>
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#1B8A5B;">✓</span><span style="font-size:14px; line-height:1.45; color:#3A332C;">Infographic designs</span></div>
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#1B8A5B;">✓</span><span style="font-size:14px; line-height:1.45; color:#3A332C;">Keyword research</span></div>
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#1B8A5B;">✓</span><span style="font-size:14px; line-height:1.45; color:#3A332C;">Search engine optimisation</span></div>
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#1B8A5B;">✓</span><span style="font-size:14px; line-height:1.45; color:#3A332C;">Plagiarism-free</span></div>
+        </div>
+      </div>
+
+      <!-- AUTHORITY (highlight) -->
+      <div style="display:flex; flex-direction:column; background:#221C17; color:#F3EDE2; border:1px solid #BD541F; border-radius:16px; padding:30px 26px; position:relative; box-shadow:0 22px 50px rgba(27,23,20,0.22);">
+        <div style="position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:#BD541F; color:#F3EDE2; font-size:10.5px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; padding:6px 14px; border-radius:100px; white-space:nowrap;">Most popular</div>
+        <div style="font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#E8B27A;">Authority</div>
+        <div style="display:flex; align-items:baseline; gap:4px; margin:14px 0 4px;"><span style="font-family:'Instrument Serif',serif; font-size:52px; line-height:1; color:#F3EDE2;">$500</span></div>
+        <p style="margin:0 0 22px; font-size:14px; line-height:1.55; color:rgba(243,237,226,0.66);">The sweet spot — a near-daily presence that consistently compounds.</p>
+        <div style="height:1px; background:rgba(243,237,226,0.16); margin:8px 0 24px;"></div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#E8B27A; font-weight:800;">20</span><span style="font-size:14px; line-height:1.45; color:rgba(243,237,226,0.9);">quality blog posts</span></div>
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#E8B27A; font-weight:800;">20</span><span style="font-size:14px; line-height:1.45; color:rgba(243,237,226,0.9);">social media carousels</span></div>
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#1B8A5B;">✓</span><span style="font-size:14px; line-height:1.45; color:rgba(243,237,226,0.9);">Image generation &amp; copyright-free images</span></div>
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#1B8A5B;">✓</span><span style="font-size:14px; line-height:1.45; color:rgba(243,237,226,0.9);">Keyword research</span></div>
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#1B8A5B;">✓</span><span style="font-size:14px; line-height:1.45; color:rgba(243,237,226,0.9);">Search engine optimisation</span></div>
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#1B8A5B;">✓</span><span style="font-size:14px; line-height:1.45; color:rgba(243,237,226,0.9);">Plagiarism-free</span></div>
+        </div>
+      </div>
+
+      <!-- MARKET LEADER -->
+      <div style="display:flex; flex-direction:column; background:#FBF7EE; border:1px solid rgba(27,23,20,0.12); border-radius:16px; padding:30px 26px; position:relative;">
+        <div style="position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:#1B1714; color:#E8B27A; font-size:10.5px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; padding:6px 14px; border-radius:100px; white-space:nowrap;">Best value</div>
+        <div style="font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#A08B70;">Market Leader</div>
+        <div style="display:flex; align-items:baseline; gap:4px; margin:14px 0 4px;"><span style="font-family:'Instrument Serif',serif; font-size:52px; line-height:1; color:#1B1714;">$1000</span></div>
+        <p style="margin:0 0 22px; font-size:14px; line-height:1.55; color:#6F655A;">Full-throttle daily publishing to dominate your niche outright.</p>
+        <div style="height:1px; background:rgba(27,23,20,0.1); margin:8px 0 24px;"></div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#BD541F; font-weight:800;">40</span><span style="font-size:14px; line-height:1.45; color:#3A332C;">quality blog posts</span></div>
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#BD541F; font-weight:800;">40</span><span style="font-size:14px; line-height:1.45; color:#3A332C;">social media carousels</span></div>
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#1B8A5B;">✓</span><span style="font-size:14px; line-height:1.45; color:#3A332C;">Image generation &amp; copyright-free images</span></div>
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#1B8A5B;">✓</span><span style="font-size:14px; line-height:1.45; color:#3A332C;">Keyword research</span></div>
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#1B8A5B;">✓</span><span style="font-size:14px; line-height:1.45; color:#3A332C;">Search engine optimisation</span></div>
+          <div style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#1B8A5B;">✓</span><span style="font-size:14px; line-height:1.45; color:#3A332C;">Plagiarism-free</span></div>
+        </div>
+      </div>
+
+    </div>
+    <p style="margin:26px 0 0; text-align:center; font-size:13.5px; color:#6F655A;">All packages delivered on a steady cadence across working days. Prefer something custom? <a href="Contact.dc.html" style="color:#BD541F; font-weight:700; text-decoration:none;">Let’s talk →</a></p>
+  </section>
+
+  <!-- EVERY PACKAGE INCLUDES -->
+  <section style="background:#EBE2D2; border-top:1px solid rgba(27,23,20,0.1); border-bottom:1px solid rgba(27,23,20,0.1);">
+    <div style="max-width:1080px; margin:0 auto; padding:clamp(56px,8vw,96px) clamp(20px,5vw,64px);">
+      <h2 style="margin:0 0 12px; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(28px,4vw,44px); line-height:1.07; text-align:center;">Every package, the same standard.</h2>
+      <p style="margin:0 auto 44px; max-width:560px; text-align:center; font-size:16px; line-height:1.7; color:#544B41;">The volume scales. The quality never does. No matter the tier, your content is researched, original and engineered to be found.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px;">
+        <div style="background:#F8F3E9; border:1px solid rgba(27,23,20,0.1); border-radius:12px; padding:26px;"><div style="font-weight:800; font-size:16px; margin-bottom:7px;">Written by a doctor</div><p style="margin:0; font-size:14px; line-height:1.6; color:#6F655A;">Accurate, credible health content — never generic AI slop.</p></div>
+        <div style="background:#F8F3E9; border:1px solid rgba(27,23,20,0.1); border-radius:12px; padding:26px;"><div style="font-weight:800; font-size:16px; margin-bottom:7px;">Built to rank from day one</div><p style="margin:0; font-size:14px; line-height:1.6; color:#6F655A;">Keyword-led and SEO-structured, not just well-written.</p></div>
+        <div style="background:#F8F3E9; border:1px solid rgba(27,23,20,0.1); border-radius:12px; padding:26px;"><div style="font-weight:800; font-size:16px; margin-bottom:7px;">Distribution included</div><p style="margin:0; font-size:14px; line-height:1.6; color:#6F655A;">Social graphics that pull the feed back to your blog.</p></div>
+        <div style="background:#F8F3E9; border:1px solid rgba(27,23,20,0.1); border-radius:12px; padding:26px;"><div style="font-weight:800; font-size:16px; margin-bottom:7px;">100% yours, 100% original</div><p style="margin:0; font-size:14px; line-height:1.6; color:#6F655A;">Plagiarism-free copy and copyright-free imagery you own.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REACH OUT -->
+  <section style="background:#16120F; color:#F3EDE2;">
+    <div data-reveal style="max-width:880px; margin:0 auto; padding:clamp(56px,8vw,104px) clamp(20px,5vw,64px); text-align:center;">
+      <p style="margin:0 0 16px; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#E8B27A;">Ready when you are</p>
+      <h2 style="margin:0 0 18px; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(30px,4.5vw,52px); line-height:1.06;">Tell me your niche — I’ll tell you which package <em style="font-style:italic; color:#E8B27A;">wins.</em></h2>
+      <p style="margin:0 auto 34px; max-width:540px; font-size:16.5px; line-height:1.7; color:rgba(243,237,226,0.72);">No pressure and no jargon. Send a message about where you want to be in six months, and me and my team will map the fastest route there.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center;">
+        <a href="https://wa.me/2347055308597?text=Hello%20Samuel%2C%20I'd%20like%20you%20to%20write%20and%20optimize%20my%20blogs." target="_blank" rel="noopener" style="text-decoration:none; font-size:15px; font-weight:700; color:#16120F; background:#E8B27A; padding:16px 30px; border-radius:6px; transition:transform .18s ease, background .2s ease;" style-hover="background:#F3EDE2; transform:translateY(-2px)">Message me on WhatsApp →</a>
+        <a href="Contact.dc.html" style="text-decoration:none; font-size:15px; font-weight:700; color:#F3EDE2; border:1px solid rgba(243,237,226,0.3); padding:16px 30px; border-radius:6px; transition:border-color .2s ease, color .2s ease;" style-hover="border-color:#E8B27A; color:#E8B27A">See all the ways to reach me</a>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  async componentDidMount(){
+    const root = document.getElementById('sePricing');
+    try { const m = await import('./reveal.js'); m.initReveal(root); }
+    catch(e){ if(root){ root.classList.add('js-ready'); root.querySelectorAll('[data-reveal]').forEach((el)=>el.classList.add('seIn')); } }
+  }
+  renderVals(){ return {}; }
+}
+</script>
+</body>
+</html>
